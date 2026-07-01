@@ -1,0 +1,1500 @@
+{
+  "agents": [
+    "causal-core-control-experiment-planner",
+    "causal-core-context-search-planner"
+  ],
+  "families": 12,
+  "family_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "family_specs": [
+    {
+      "family_seed": 1,
+      "mechanisms": [
+        {
+          "action": "probe_1_0",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_1_0",
+          "visible_conditions": [
+            [
+              "ctx_1_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_1_1",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_1_1",
+          "visible_conditions": [
+            [
+              "ctx_1_3",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_1_2",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_1_2",
+          "visible_conditions": [
+            [
+              "ctx_1_0",
+              false
+            ],
+            [
+              "ctx_1_1",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_1_3",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_1_3",
+          "visible_conditions": [
+            [
+              "ctx_1_0",
+              true
+            ],
+            [
+              "ctx_1_4",
+              true
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_1_0": [
+          "out_1_1"
+        ],
+        "sensor_1_1": [
+          "ctx_1_4",
+          "out_1_0"
+        ],
+        "sensor_1_2": [
+          "ctx_1_4"
+        ],
+        "sensor_1_3": [
+          "ctx_1_2"
+        ],
+        "sensor_1_4": [
+          "ctx_1_2"
+        ],
+        "sensor_1_5": [
+          "ctx_1_4"
+        ]
+      },
+      "targets": [
+        "out_1_0",
+        "out_1_1",
+        "out_1_2",
+        "out_1_3"
+      ],
+      "visible_variables": [
+        "ctx_1_0",
+        "ctx_1_1",
+        "ctx_1_2",
+        "ctx_1_3",
+        "ctx_1_4"
+      ]
+    },
+    {
+      "family_seed": 2,
+      "mechanisms": [
+        {
+          "action": "probe_2_0",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_2_0",
+          "visible_conditions": [
+            [
+              "ctx_2_0",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_2_1",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_2_1",
+          "visible_conditions": [
+            [
+              "ctx_2_2",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_2_2",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_2_2",
+          "visible_conditions": [
+            [
+              "ctx_2_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_2_3",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_2_3",
+          "visible_conditions": [
+            [
+              "ctx_2_3",
+              true
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_2_0": [
+          "ctx_2_3",
+          "ctx_2_4"
+        ],
+        "sensor_2_1": [
+          "ctx_2_4",
+          "out_2_0"
+        ],
+        "sensor_2_2": [
+          "ctx_2_1",
+          "ctx_2_3"
+        ],
+        "sensor_2_3": [
+          "ctx_2_2",
+          "out_2_2"
+        ],
+        "sensor_2_4": [
+          "out_2_3"
+        ],
+        "sensor_2_5": [
+          "out_2_0"
+        ]
+      },
+      "targets": [
+        "out_2_0",
+        "out_2_1",
+        "out_2_2",
+        "out_2_3"
+      ],
+      "visible_variables": [
+        "ctx_2_0",
+        "ctx_2_1",
+        "ctx_2_2",
+        "ctx_2_3",
+        "ctx_2_4"
+      ]
+    },
+    {
+      "family_seed": 3,
+      "mechanisms": [
+        {
+          "action": "probe_3_0",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_3_0",
+          "visible_conditions": [
+            [
+              "ctx_3_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_3_1",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_3_1",
+          "visible_conditions": [
+            [
+              "ctx_3_0",
+              true
+            ],
+            [
+              "ctx_3_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_3_2",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_3_2",
+          "visible_conditions": [
+            [
+              "ctx_3_1",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_3_3",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_3_3",
+          "visible_conditions": [
+            [
+              "ctx_3_1",
+              false
+            ],
+            [
+              "ctx_3_3",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_3_0": [
+          "out_3_0",
+          "out_3_1"
+        ],
+        "sensor_3_1": [
+          "out_3_0"
+        ],
+        "sensor_3_2": [
+          "ctx_3_0",
+          "out_3_0"
+        ],
+        "sensor_3_3": [
+          "ctx_3_2",
+          "ctx_3_4"
+        ],
+        "sensor_3_4": [
+          "ctx_3_3",
+          "out_3_2"
+        ],
+        "sensor_3_5": [
+          "out_3_0",
+          "out_3_1"
+        ]
+      },
+      "targets": [
+        "out_3_0",
+        "out_3_1",
+        "out_3_2",
+        "out_3_3"
+      ],
+      "visible_variables": [
+        "ctx_3_0",
+        "ctx_3_1",
+        "ctx_3_2",
+        "ctx_3_3",
+        "ctx_3_4"
+      ]
+    },
+    {
+      "family_seed": 4,
+      "mechanisms": [
+        {
+          "action": "probe_4_0",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_4_0",
+          "visible_conditions": [
+            [
+              "ctx_4_2",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_4_1",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_4_1",
+          "visible_conditions": [
+            [
+              "ctx_4_1",
+              false
+            ],
+            [
+              "ctx_4_3",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_4_2",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_4_2",
+          "visible_conditions": [
+            [
+              "ctx_4_2",
+              false
+            ],
+            [
+              "ctx_4_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_4_3",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_4_3",
+          "visible_conditions": [
+            [
+              "ctx_4_1",
+              true
+            ],
+            [
+              "ctx_4_2",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_4_0": [
+          "ctx_4_0"
+        ],
+        "sensor_4_1": [
+          "out_4_2",
+          "out_4_3"
+        ],
+        "sensor_4_2": [
+          "ctx_4_0",
+          "ctx_4_1"
+        ],
+        "sensor_4_3": [
+          "ctx_4_1"
+        ],
+        "sensor_4_4": [
+          "ctx_4_4",
+          "out_4_3"
+        ],
+        "sensor_4_5": [
+          "out_4_3"
+        ]
+      },
+      "targets": [
+        "out_4_0",
+        "out_4_1",
+        "out_4_2",
+        "out_4_3"
+      ],
+      "visible_variables": [
+        "ctx_4_0",
+        "ctx_4_1",
+        "ctx_4_2",
+        "ctx_4_3",
+        "ctx_4_4"
+      ]
+    },
+    {
+      "family_seed": 5,
+      "mechanisms": [
+        {
+          "action": "probe_5_0",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_5_0",
+          "visible_conditions": [
+            [
+              "ctx_5_0",
+              false
+            ],
+            [
+              "ctx_5_2",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_5_1",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_5_1",
+          "visible_conditions": [
+            [
+              "ctx_5_1",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_5_2",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_5_2",
+          "visible_conditions": [
+            [
+              "ctx_5_1",
+              false
+            ],
+            [
+              "ctx_5_3",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_5_3",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_5_3",
+          "visible_conditions": [
+            [
+              "ctx_5_3",
+              true
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_5_0": [
+          "out_5_1",
+          "out_5_2"
+        ],
+        "sensor_5_1": [
+          "ctx_5_3"
+        ],
+        "sensor_5_2": [
+          "out_5_2"
+        ],
+        "sensor_5_3": [
+          "out_5_0"
+        ],
+        "sensor_5_4": [
+          "out_5_3"
+        ],
+        "sensor_5_5": [
+          "out_5_2"
+        ]
+      },
+      "targets": [
+        "out_5_0",
+        "out_5_1",
+        "out_5_2",
+        "out_5_3"
+      ],
+      "visible_variables": [
+        "ctx_5_0",
+        "ctx_5_1",
+        "ctx_5_2",
+        "ctx_5_3",
+        "ctx_5_4"
+      ]
+    },
+    {
+      "family_seed": 6,
+      "mechanisms": [
+        {
+          "action": "probe_6_0",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_6_0",
+          "visible_conditions": [
+            [
+              "ctx_6_3",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_6_1",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_6_1",
+          "visible_conditions": [
+            [
+              "ctx_6_1",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_6_2",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_6_2",
+          "visible_conditions": [
+            [
+              "ctx_6_0",
+              true
+            ],
+            [
+              "ctx_6_2",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_6_3",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_6_3",
+          "visible_conditions": [
+            [
+              "ctx_6_0",
+              true
+            ],
+            [
+              "ctx_6_4",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_6_0": [
+          "ctx_6_2"
+        ],
+        "sensor_6_1": [
+          "ctx_6_1",
+          "out_6_1"
+        ],
+        "sensor_6_2": [
+          "ctx_6_0",
+          "ctx_6_3"
+        ],
+        "sensor_6_3": [
+          "out_6_3"
+        ],
+        "sensor_6_4": [
+          "out_6_0",
+          "out_6_1"
+        ],
+        "sensor_6_5": [
+          "ctx_6_1"
+        ]
+      },
+      "targets": [
+        "out_6_0",
+        "out_6_1",
+        "out_6_2",
+        "out_6_3"
+      ],
+      "visible_variables": [
+        "ctx_6_0",
+        "ctx_6_1",
+        "ctx_6_2",
+        "ctx_6_3",
+        "ctx_6_4"
+      ]
+    },
+    {
+      "family_seed": 7,
+      "mechanisms": [
+        {
+          "action": "probe_7_0",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_7_0",
+          "visible_conditions": [
+            [
+              "ctx_7_1",
+              false
+            ],
+            [
+              "ctx_7_3",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_7_1",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_7_1",
+          "visible_conditions": [
+            [
+              "ctx_7_2",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_7_2",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_7_2",
+          "visible_conditions": [
+            [
+              "ctx_7_0",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_7_3",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_7_3",
+          "visible_conditions": [
+            [
+              "ctx_7_0",
+              false
+            ],
+            [
+              "ctx_7_1",
+              true
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_7_0": [
+          "out_7_3"
+        ],
+        "sensor_7_1": [
+          "ctx_7_2"
+        ],
+        "sensor_7_2": [
+          "out_7_3"
+        ],
+        "sensor_7_3": [
+          "ctx_7_4"
+        ],
+        "sensor_7_4": [
+          "ctx_7_0"
+        ],
+        "sensor_7_5": [
+          "out_7_1",
+          "out_7_2"
+        ]
+      },
+      "targets": [
+        "out_7_0",
+        "out_7_1",
+        "out_7_2",
+        "out_7_3"
+      ],
+      "visible_variables": [
+        "ctx_7_0",
+        "ctx_7_1",
+        "ctx_7_2",
+        "ctx_7_3",
+        "ctx_7_4"
+      ]
+    },
+    {
+      "family_seed": 8,
+      "mechanisms": [
+        {
+          "action": "probe_8_0",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_8_0",
+          "visible_conditions": [
+            [
+              "ctx_8_2",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_8_1",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_8_1",
+          "visible_conditions": [
+            [
+              "ctx_8_0",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_8_2",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_8_2",
+          "visible_conditions": [
+            [
+              "ctx_8_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_8_3",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_8_3",
+          "visible_conditions": [
+            [
+              "ctx_8_3",
+              true
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_8_0": [
+          "ctx_8_3",
+          "out_8_3"
+        ],
+        "sensor_8_1": [
+          "ctx_8_3",
+          "out_8_1"
+        ],
+        "sensor_8_2": [
+          "out_8_0"
+        ],
+        "sensor_8_3": [
+          "ctx_8_2",
+          "ctx_8_4"
+        ],
+        "sensor_8_4": [
+          "ctx_8_2",
+          "out_8_1"
+        ],
+        "sensor_8_5": [
+          "ctx_8_4",
+          "out_8_1"
+        ]
+      },
+      "targets": [
+        "out_8_0",
+        "out_8_1",
+        "out_8_2",
+        "out_8_3"
+      ],
+      "visible_variables": [
+        "ctx_8_0",
+        "ctx_8_1",
+        "ctx_8_2",
+        "ctx_8_3",
+        "ctx_8_4"
+      ]
+    },
+    {
+      "family_seed": 9,
+      "mechanisms": [
+        {
+          "action": "probe_9_0",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_9_0",
+          "visible_conditions": [
+            [
+              "ctx_9_2",
+              false
+            ],
+            [
+              "ctx_9_4",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_9_1",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_9_1",
+          "visible_conditions": [
+            [
+              "ctx_9_2",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_9_2",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_9_2",
+          "visible_conditions": [
+            [
+              "ctx_9_2",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_9_3",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_9_3",
+          "visible_conditions": [
+            [
+              "ctx_9_1",
+              true
+            ],
+            [
+              "ctx_9_3",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_9_0": [
+          "out_9_0"
+        ],
+        "sensor_9_1": [
+          "out_9_2"
+        ],
+        "sensor_9_2": [
+          "ctx_9_2"
+        ],
+        "sensor_9_3": [
+          "ctx_9_0"
+        ],
+        "sensor_9_4": [
+          "out_9_3"
+        ],
+        "sensor_9_5": [
+          "ctx_9_0",
+          "out_9_1"
+        ]
+      },
+      "targets": [
+        "out_9_0",
+        "out_9_1",
+        "out_9_2",
+        "out_9_3"
+      ],
+      "visible_variables": [
+        "ctx_9_0",
+        "ctx_9_1",
+        "ctx_9_2",
+        "ctx_9_3",
+        "ctx_9_4"
+      ]
+    },
+    {
+      "family_seed": 10,
+      "mechanisms": [
+        {
+          "action": "probe_10_0",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_10_0",
+          "visible_conditions": [
+            [
+              "ctx_10_3",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_10_1",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_10_1",
+          "visible_conditions": [
+            [
+              "ctx_10_1",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_10_2",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_10_2",
+          "visible_conditions": [
+            [
+              "ctx_10_0",
+              true
+            ],
+            [
+              "ctx_10_1",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_10_3",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_10_3",
+          "visible_conditions": [
+            [
+              "ctx_10_2",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_10_0": [
+          "ctx_10_1"
+        ],
+        "sensor_10_1": [
+          "ctx_10_0",
+          "ctx_10_2"
+        ],
+        "sensor_10_2": [
+          "ctx_10_3",
+          "out_10_2"
+        ],
+        "sensor_10_3": [
+          "ctx_10_1",
+          "out_10_2"
+        ],
+        "sensor_10_4": [
+          "ctx_10_3",
+          "out_10_3"
+        ],
+        "sensor_10_5": [
+          "ctx_10_4",
+          "out_10_0"
+        ]
+      },
+      "targets": [
+        "out_10_0",
+        "out_10_1",
+        "out_10_2",
+        "out_10_3"
+      ],
+      "visible_variables": [
+        "ctx_10_0",
+        "ctx_10_1",
+        "ctx_10_2",
+        "ctx_10_3",
+        "ctx_10_4"
+      ]
+    },
+    {
+      "family_seed": 11,
+      "mechanisms": [
+        {
+          "action": "probe_11_0",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_11_0",
+          "visible_conditions": [
+            [
+              "ctx_11_3",
+              false
+            ],
+            [
+              "ctx_11_4",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_11_1",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_11_1",
+          "visible_conditions": [
+            [
+              "ctx_11_1",
+              true
+            ],
+            [
+              "ctx_11_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_11_2",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_11_2",
+          "visible_conditions": [
+            [
+              "ctx_11_0",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_11_3",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_11_3",
+          "visible_conditions": [
+            [
+              "ctx_11_1",
+              false
+            ],
+            [
+              "ctx_11_3",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_11_0": [
+          "out_11_3"
+        ],
+        "sensor_11_1": [
+          "out_11_0"
+        ],
+        "sensor_11_2": [
+          "ctx_11_1",
+          "ctx_11_3"
+        ],
+        "sensor_11_3": [
+          "ctx_11_4"
+        ],
+        "sensor_11_4": [
+          "ctx_11_0"
+        ],
+        "sensor_11_5": [
+          "out_11_0",
+          "out_11_1"
+        ]
+      },
+      "targets": [
+        "out_11_0",
+        "out_11_1",
+        "out_11_2",
+        "out_11_3"
+      ],
+      "visible_variables": [
+        "ctx_11_0",
+        "ctx_11_1",
+        "ctx_11_2",
+        "ctx_11_3",
+        "ctx_11_4"
+      ]
+    },
+    {
+      "family_seed": 12,
+      "mechanisms": [
+        {
+          "action": "probe_12_0",
+          "hidden_enabled_probability": 0.55,
+          "target": "out_12_0",
+          "visible_conditions": [
+            [
+              "ctx_12_2",
+              false
+            ],
+            [
+              "ctx_12_4",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_12_1",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_12_1",
+          "visible_conditions": [
+            [
+              "ctx_12_2",
+              false
+            ],
+            [
+              "ctx_12_3",
+              true
+            ]
+          ]
+        },
+        {
+          "action": "probe_12_2",
+          "hidden_enabled_probability": 0.65,
+          "target": "out_12_2",
+          "visible_conditions": [
+            [
+              "ctx_12_4",
+              false
+            ]
+          ]
+        },
+        {
+          "action": "probe_12_3",
+          "hidden_enabled_probability": 0.75,
+          "target": "out_12_3",
+          "visible_conditions": [
+            [
+              "ctx_12_1",
+              false
+            ],
+            [
+              "ctx_12_2",
+              false
+            ]
+          ]
+        }
+      ],
+      "readout_sources": {
+        "sensor_12_0": [
+          "out_12_1"
+        ],
+        "sensor_12_1": [
+          "ctx_12_2",
+          "out_12_1"
+        ],
+        "sensor_12_2": [
+          "out_12_0"
+        ],
+        "sensor_12_3": [
+          "out_12_1"
+        ],
+        "sensor_12_4": [
+          "ctx_12_3",
+          "out_12_1"
+        ],
+        "sensor_12_5": [
+          "ctx_12_1",
+          "out_12_2"
+        ]
+      },
+      "targets": [
+        "out_12_0",
+        "out_12_1",
+        "out_12_2",
+        "out_12_3"
+      ],
+      "visible_variables": [
+        "ctx_12_0",
+        "ctx_12_1",
+        "ctx_12_2",
+        "ctx_12_3",
+        "ctx_12_4"
+      ]
+    }
+  ],
+  "family_start": 1,
+  "mechanisms": 4,
+  "noise": 0.02,
+  "readouts": 6,
+  "runs": [
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 16,
+      "f1": 0.761904761904762,
+      "false_positive": 0,
+      "family_seed": 1,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.25,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.6153846153846154,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 17,
+      "f1": 0.7906976744186047,
+      "false_positive": 0,
+      "family_seed": 1,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.6538461538461539,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 18,
+      "f1": 0.7272727272727274,
+      "false_positive": 2,
+      "family_seed": 2,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.8888888888888888,
+      "readout_false_positive": 0,
+      "recall": 0.6153846153846154,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 15,
+      "f1": 0.6341463414634146,
+      "false_positive": 2,
+      "family_seed": 2,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.25,
+      "non_readout_false_positive": 2,
+      "precision": 0.8666666666666667,
+      "readout_false_positive": 0,
+      "recall": 0.5,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 20,
+      "f1": 0.8260869565217392,
+      "false_positive": 1,
+      "family_seed": 3,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 1,
+      "precision": 0.95,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 20,
+      "f1": 0.7826086956521738,
+      "false_positive": 2,
+      "family_seed": 3,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 2,
+      "precision": 0.9,
+      "readout_false_positive": 0,
+      "recall": 0.6923076923076923,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 18,
+      "f1": 0.7272727272727274,
+      "false_positive": 2,
+      "family_seed": 4,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.8888888888888888,
+      "readout_false_positive": 0,
+      "recall": 0.6153846153846154,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 19,
+      "f1": 0.8444444444444443,
+      "false_positive": 0,
+      "family_seed": 4,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 20,
+      "f1": 0.8260869565217392,
+      "false_positive": 1,
+      "family_seed": 5,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 1,
+      "precision": 0.95,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 20,
+      "f1": 0.8260869565217392,
+      "false_positive": 1,
+      "family_seed": 5,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 1,
+      "precision": 0.95,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 16,
+      "f1": 0.6190476190476191,
+      "false_positive": 3,
+      "family_seed": 6,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.0,
+      "non_readout_false_positive": 3,
+      "precision": 0.8125,
+      "readout_false_positive": 0,
+      "recall": 0.5,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 18,
+      "f1": 0.7272727272727274,
+      "false_positive": 2,
+      "family_seed": 6,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.8888888888888888,
+      "readout_false_positive": 0,
+      "recall": 0.6153846153846154,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 20,
+      "f1": 0.7826086956521738,
+      "false_positive": 2,
+      "family_seed": 7,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.9,
+      "readout_false_positive": 0,
+      "recall": 0.6923076923076923,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 19,
+      "f1": 0.8444444444444443,
+      "false_positive": 0,
+      "family_seed": 7,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 1.0,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 19,
+      "f1": 0.8444444444444443,
+      "false_positive": 0,
+      "family_seed": 8,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 19,
+      "f1": 0.7555555555555555,
+      "false_positive": 2,
+      "family_seed": 8,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 2,
+      "precision": 0.8947368421052632,
+      "readout_false_positive": 0,
+      "recall": 0.6538461538461539,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 18,
+      "f1": 0.7727272727272727,
+      "false_positive": 1,
+      "family_seed": 9,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.0,
+      "non_readout_false_positive": 1,
+      "precision": 0.9444444444444444,
+      "readout_false_positive": 0,
+      "recall": 0.6538461538461539,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 20,
+      "f1": 0.8260869565217392,
+      "false_positive": 1,
+      "family_seed": 9,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 1,
+      "precision": 0.95,
+      "readout_false_positive": 0,
+      "recall": 0.7307692307692307,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 11,
+      "f1": 0.5945945945945945,
+      "false_positive": 0,
+      "family_seed": 10,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.25,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.4230769230769231,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 11,
+      "f1": 0.5945945945945945,
+      "false_positive": 0,
+      "family_seed": 10,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.25,
+      "non_readout_false_positive": 0,
+      "precision": 1.0,
+      "readout_false_positive": 0,
+      "recall": 0.4230769230769231,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 17,
+      "f1": 0.6976744186046512,
+      "false_positive": 2,
+      "family_seed": 11,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.8823529411764706,
+      "readout_false_positive": 0,
+      "recall": 0.5769230769230769,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 18,
+      "f1": 0.7727272727272727,
+      "false_positive": 1,
+      "family_seed": 11,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 1,
+      "precision": 0.9444444444444444,
+      "readout_false_positive": 0,
+      "recall": 0.6538461538461539,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 20,
+      "f1": 0.7826086956521738,
+      "false_positive": 2,
+      "family_seed": 12,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.5,
+      "non_readout_false_positive": 2,
+      "precision": 0.9,
+      "readout_false_positive": 0,
+      "recall": 0.6923076923076923,
+      "seed": 1
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 20,
+      "f1": 0.7826086956521738,
+      "false_positive": 2,
+      "family_seed": 12,
+      "hidden_context_false_positive": 0,
+      "hidden_context_recall": 0.75,
+      "non_readout_false_positive": 2,
+      "precision": 0.9,
+      "readout_false_positive": 0,
+      "recall": 0.6923076923076923,
+      "seed": 1
+    }
+  ],
+  "seeds": 1,
+  "steps": 160,
+  "summary": [
+    {
+      "agent": "causal-core-control-experiment-planner",
+      "edges": 17.75,
+      "f1": 0.7468608225180521,
+      "false_positive": 1.3333333333333333,
+      "hidden_context_false_positive": 0.0,
+      "hidden_context_recall": 0.4166666666666667,
+      "non_readout_false_positive": 1.3333333333333333,
+      "precision": 0.9264229302832243,
+      "readout_false_positive": 0.0,
+      "recall": 0.6314102564102564
+    },
+    {
+      "agent": "causal-core-context-search-planner",
+      "edges": 18.0,
+      "f1": 0.7651061966057404,
+      "false_positive": 1.0833333333333333,
+      "hidden_context_false_positive": 0.0,
+      "hidden_context_recall": 0.625,
+      "non_readout_false_positive": 1.0833333333333333,
+      "precision": 0.9412280701754385,
+      "readout_false_positive": 0.0,
+      "recall": 0.6506410256410257
+    }
+  ],
+  "visible": 5
+}

@@ -1,0 +1,151 @@
+{
+  "agents": [
+    "random",
+    "passive-correlation",
+    "reward-rl",
+    "causal-core",
+    "causal-core-observation-adapter-v2",
+    "causal-core-persistent-latent-context-adapter",
+    "causal-core-control-experiment-planner",
+    "causal-core-context-search-planner"
+  ],
+  "model": null,
+  "results": {
+    "panel-complex-noisy-hidden": {
+      "100": {
+        "hidden_context_edges": [
+          {
+            "action": "press_a",
+            "target": "lamp_on"
+          },
+          {
+            "action": "press_c",
+            "target": "alarm_on"
+          },
+          {
+            "action": "press_d",
+            "target": "pressure_high"
+          },
+          {
+            "action": "press_e",
+            "target": "backup_on"
+          }
+        ],
+        "readout_variables": [
+          "access_sensor",
+          "alarm_sensor",
+          "light_sensor",
+          "pressure_sensor",
+          "safety_sensor",
+          "thermal_sensor"
+        ],
+        "summary": [
+          {
+            "agent": "random",
+            "edges": 166.6,
+            "f1": 0.24463976106091617,
+            "false_positive": 142.4,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 83.0,
+            "precision": 0.1450972590159158,
+            "readout_false_positive": 59.4,
+            "recall": 0.7806451612903226
+          },
+          {
+            "agent": "passive-correlation",
+            "edges": 181.4,
+            "f1": 0.0,
+            "false_positive": 181.4,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 120.2,
+            "precision": 0.0,
+            "readout_false_positive": 61.2,
+            "recall": 0.0
+          },
+          {
+            "agent": "reward-rl",
+            "edges": 114.6,
+            "f1": 0.326299694785781,
+            "false_positive": 91.0,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 51.0,
+            "precision": 0.20831686066907232,
+            "readout_false_positive": 40.0,
+            "recall": 0.7612903225806452
+          },
+          {
+            "agent": "causal-core",
+            "edges": 178.0,
+            "f1": 0.2624844874424549,
+            "false_positive": 150.6,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 89.4,
+            "precision": 0.15419102040014246,
+            "readout_false_positive": 61.2,
+            "recall": 0.8838709677419354
+          },
+          {
+            "agent": "causal-core-observation-adapter-v2",
+            "edges": 48.8,
+            "f1": 0.5360339010836792,
+            "false_positive": 27.4,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 27.4,
+            "precision": 0.4397808289271704,
+            "readout_false_positive": 0.0,
+            "recall": 0.6903225806451613
+          },
+          {
+            "agent": "causal-core-persistent-latent-context-adapter",
+            "edges": 45.0,
+            "f1": 0.5478822055137844,
+            "false_positive": 24.2,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.0,
+            "non_readout_false_positive": 24.2,
+            "precision": 0.4636034638155529,
+            "readout_false_positive": 0.0,
+            "recall": 0.6709677419354838
+          },
+          {
+            "agent": "causal-core-control-experiment-planner",
+            "edges": 23.4,
+            "f1": 0.6581789408110446,
+            "false_positive": 5.2,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.25,
+            "non_readout_false_positive": 5.2,
+            "precision": 0.784739010989011,
+            "readout_false_positive": 0.0,
+            "recall": 0.5870967741935484
+          },
+          {
+            "agent": "causal-core-context-search-planner",
+            "edges": 20.4,
+            "f1": 0.6395844497509315,
+            "false_positive": 3.8,
+            "hidden_context_false_positive": 0.0,
+            "hidden_context_recall": 0.25,
+            "non_readout_false_positive": 3.8,
+            "precision": 0.8126999087868654,
+            "readout_false_positive": 0.0,
+            "recall": 0.535483870967742
+          }
+        ]
+      }
+    }
+  },
+  "seeds": 5,
+  "sensor_suffix": "_sensor",
+  "steps_list": [
+    100
+  ],
+  "worlds": [
+    "panel-complex-noisy-hidden"
+  ]
+}

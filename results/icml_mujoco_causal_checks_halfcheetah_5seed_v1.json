@@ -1,0 +1,383 @@
+{
+  "adapt_states": 30,
+  "context_dims": [
+    0,
+    1
+  ],
+  "context_shift": {
+    "description": "all actuator gear signs are reversed at test time",
+    "per_seed": {
+      "few-shot metric core": [
+        {
+          "cell_coverage": 0,
+          "exact_accuracy": 0.9590277777777778,
+          "mean_effect_error": 0.30586240142842547,
+          "mean_rank": 1.5333333333333334,
+          "method": "few-shot metric core",
+          "target_accuracy": 0.9652777777777778
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.96875,
+          "mean_effect_error": 0.28737537471525787,
+          "mean_rank": 1.41875,
+          "method": "few-shot metric core",
+          "target_accuracy": 0.9729166666666667
+        },
+        {
+          "cell_coverage": 0.8833333333333333,
+          "exact_accuracy": 0.9513888888888888,
+          "mean_effect_error": 0.3083870776825481,
+          "mean_rank": 1.6444444444444444,
+          "method": "few-shot metric core",
+          "target_accuracy": 0.9569444444444445
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.9583333333333334,
+          "mean_effect_error": 0.29055917215688776,
+          "mean_rank": 1.6229166666666666,
+          "method": "few-shot metric core",
+          "target_accuracy": 0.9611111111111111
+        },
+        {
+          "cell_coverage": 0.9,
+          "exact_accuracy": 0.9583333333333334,
+          "mean_effect_error": 0.29677409439399427,
+          "mean_rank": 1.5590277777777777,
+          "method": "few-shot metric core",
+          "target_accuracy": 0.9645833333333333
+        }
+      ],
+      "source-linear dynamics": [
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.9652553062937739,
+          "mean_rank": 1.0715277777777779,
+          "method": "source-linear dynamics",
+          "target_accuracy": 0.9652777777777778
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.004166666666666667,
+          "mean_effect_error": 1.9728204468368655,
+          "mean_rank": 1.0604166666666666,
+          "method": "source-linear dynamics",
+          "target_accuracy": 0.9729166666666667
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.005555555555555556,
+          "mean_effect_error": 1.9658314061661561,
+          "mean_rank": 1.1590277777777778,
+          "method": "source-linear dynamics",
+          "target_accuracy": 0.9569444444444445
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.002777777777777778,
+          "mean_effect_error": 1.9740231051730612,
+          "mean_rank": 1.0715277777777779,
+          "method": "source-linear dynamics",
+          "target_accuracy": 0.9611111111111111
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.9679824597719642,
+          "mean_rank": 1.0791666666666666,
+          "method": "source-linear dynamics",
+          "target_accuracy": 0.9645833333333333
+        }
+      ],
+      "source-metric core": [
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.9500687059842878,
+          "mean_rank": 1.5333333333333334,
+          "method": "source-metric core",
+          "target_accuracy": 0.9652777777777778
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.004166666666666667,
+          "mean_effect_error": 1.9580821057057216,
+          "mean_rank": 1.41875,
+          "method": "source-metric core",
+          "target_accuracy": 0.9729166666666667
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.005555555555555556,
+          "mean_effect_error": 1.9498297655851478,
+          "mean_rank": 1.6444444444444444,
+          "method": "source-metric core",
+          "target_accuracy": 0.9569444444444445
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.002777777777777778,
+          "mean_effect_error": 1.9586909332312643,
+          "mean_rank": 1.6229166666666666,
+          "method": "source-metric core",
+          "target_accuracy": 0.9611111111111111
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.9517782809678466,
+          "mean_rank": 1.5590277777777777,
+          "method": "source-metric core",
+          "target_accuracy": 0.9645833333333333
+        }
+      ],
+      "source-neural dynamics": [
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.959581883210275,
+          "mean_rank": 1.0888888888888888,
+          "method": "source-neural dynamics",
+          "target_accuracy": 0.9652777777777778
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.004166666666666667,
+          "mean_effect_error": 1.9658328279697648,
+          "mean_rank": 1.0618055555555554,
+          "method": "source-neural dynamics",
+          "target_accuracy": 0.9736111111111111
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.005555555555555556,
+          "mean_effect_error": 1.9621856858953834,
+          "mean_rank": 1.13125,
+          "method": "source-neural dynamics",
+          "target_accuracy": 0.9569444444444445
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.002777777777777778,
+          "mean_effect_error": 1.9689618669967683,
+          "mean_rank": 1.0847222222222221,
+          "method": "source-neural dynamics",
+          "target_accuracy": 0.9611111111111111
+        },
+        {
+          "cell_coverage": 1,
+          "exact_accuracy": 0.00625,
+          "mean_effect_error": 1.961990247822056,
+          "mean_rank": 1.0819444444444444,
+          "method": "source-neural dynamics",
+          "target_accuracy": 0.9645833333333333
+        }
+      ]
+    },
+    "summary": [
+      {
+        "cell_coverage": 1,
+        "exact_accuracy": 0.005,
+        "mean_effect_error": 1.9691825448483642,
+        "mean_rank": 1.0883333333333334,
+        "method": "source-linear dynamics",
+        "target_accuracy": 0.9641666666666667
+      },
+      {
+        "cell_coverage": 1,
+        "exact_accuracy": 0.005,
+        "mean_effect_error": 1.9637105023788495,
+        "mean_rank": 1.0897222222222223,
+        "method": "source-neural dynamics",
+        "target_accuracy": 0.9643055555555555
+      },
+      {
+        "cell_coverage": 1,
+        "exact_accuracy": 0.005,
+        "mean_effect_error": 1.9536899582948537,
+        "mean_rank": 1.5556944444444445,
+        "method": "source-metric core",
+        "target_accuracy": 0.9641666666666667
+      },
+      {
+        "cell_coverage": 0.7566666666666667,
+        "exact_accuracy": 0.9591666666666667,
+        "mean_effect_error": 0.2977916240754227,
+        "mean_rank": 1.5556944444444445,
+        "method": "few-shot metric core",
+        "target_accuracy": 0.9641666666666667
+      }
+    ]
+  },
+  "env_id": "HalfCheetah-v5",
+  "epochs": 60,
+  "pulse": 0.8,
+  "random_transitions": 3000,
+  "readout_scale": 4.0,
+  "readout_shift": {
+    "description": "the observation appends amplified deterministic readouts of every physical state coordinate",
+    "per_seed": {
+      "linear observed selector": [
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "linear observed selector",
+          "readout_false_positive_rate": 0.9652777777777778
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "linear observed selector",
+          "readout_false_positive_rate": 0.9729166666666667
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "linear observed selector",
+          "readout_false_positive_rate": 0.9569444444444445
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "linear observed selector",
+          "readout_false_positive_rate": 0.9611111111111111
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "linear observed selector",
+          "readout_false_positive_rate": 0.9645833333333333
+        }
+      ],
+      "metric core observed selector": [
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "metric core observed selector",
+          "readout_false_positive_rate": 0.9652777777777778
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "metric core observed selector",
+          "readout_false_positive_rate": 0.9729166666666667
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "metric core observed selector",
+          "readout_false_positive_rate": 0.9569444444444445
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "metric core observed selector",
+          "readout_false_positive_rate": 0.9611111111111111
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "metric core observed selector",
+          "readout_false_positive_rate": 0.9645833333333333
+        }
+      ],
+      "metric core with readout filter": [
+        {
+          "direct_accuracy": 0.9652777777777778,
+          "exact_accuracy": 0.9590277777777778,
+          "method": "metric core with readout filter",
+          "readout_false_positive_rate": 0
+        },
+        {
+          "direct_accuracy": 0.9729166666666667,
+          "exact_accuracy": 0.96875,
+          "method": "metric core with readout filter",
+          "readout_false_positive_rate": 0
+        },
+        {
+          "direct_accuracy": 0.9569444444444445,
+          "exact_accuracy": 0.9513888888888888,
+          "method": "metric core with readout filter",
+          "readout_false_positive_rate": 0
+        },
+        {
+          "direct_accuracy": 0.9611111111111111,
+          "exact_accuracy": 0.9583333333333334,
+          "method": "metric core with readout filter",
+          "readout_false_positive_rate": 0
+        },
+        {
+          "direct_accuracy": 0.9645833333333333,
+          "exact_accuracy": 0.9583333333333334,
+          "method": "metric core with readout filter",
+          "readout_false_positive_rate": 0
+        }
+      ],
+      "neural observed selector": [
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "neural observed selector",
+          "readout_false_positive_rate": 0.9652777777777778
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "neural observed selector",
+          "readout_false_positive_rate": 0.9736111111111111
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "neural observed selector",
+          "readout_false_positive_rate": 0.9569444444444445
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "neural observed selector",
+          "readout_false_positive_rate": 0.9611111111111111
+        },
+        {
+          "direct_accuracy": 0,
+          "exact_accuracy": 0,
+          "method": "neural observed selector",
+          "readout_false_positive_rate": 0.9645833333333333
+        }
+      ]
+    },
+    "summary": [
+      {
+        "direct_accuracy": 0,
+        "exact_accuracy": 0,
+        "method": "linear observed selector",
+        "readout_false_positive_rate": 0.9641666666666667
+      },
+      {
+        "direct_accuracy": 0,
+        "exact_accuracy": 0,
+        "method": "neural observed selector",
+        "readout_false_positive_rate": 0.9643055555555555
+      },
+      {
+        "direct_accuracy": 0,
+        "exact_accuracy": 0,
+        "method": "metric core observed selector",
+        "readout_false_positive_rate": 0.9641666666666667
+      },
+      {
+        "direct_accuracy": 0.9641666666666667,
+        "exact_accuracy": 0.9591666666666667,
+        "method": "metric core with readout filter",
+        "readout_false_positive_rate": 0
+      }
+    ]
+  },
+  "seeds": 5,
+  "task": "mujoco causal checks",
+  "test_states": 120,
+  "train_states": 240,
+  "val_transitions": 800
+}
