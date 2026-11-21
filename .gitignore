@@ -34,6 +34,9 @@ Thumbs.db
 /software/experiments/*/results/
 /software/experiments/*/*lock.json
 /software/experiments/*/development_selection.json
+/software/experiments/*/*.csv
+/software/experiments/*/*.json
+!/software/experiments/*/protocol.json
 /software/outputs/
 /software/external/tdmpc2/checkpoints/
 *.zip
