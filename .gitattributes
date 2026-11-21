@@ -1,2 +1,2 @@
-# Preserve the bytes checked by the release manifest, including on Windows.
-software/** -text
+# Preserve source and data bytes checked by manifest.json on every platform.
+* -text

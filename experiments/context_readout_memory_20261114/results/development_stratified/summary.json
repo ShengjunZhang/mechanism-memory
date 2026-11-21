@@ -1,0 +1,46 @@
+[
+  {
+    "method": "stratified change + shared filter",
+    "direct_ba": 0.9595311064761242,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 7102,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.8381244259044967
+      },
+      {
+        "family": 7104,
+        "direct_ba": 1.0
+      }
+    ]
+  },
+  {
+    "method": "stratified next-state + shared filter",
+    "direct_ba": 0.908570465281952,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9098678741775119
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9075012821190829
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.9097088893231531
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9072038155080602
+      }
+    ]
+  }
+]

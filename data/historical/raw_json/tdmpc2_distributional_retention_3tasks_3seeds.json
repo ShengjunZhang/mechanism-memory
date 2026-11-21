@@ -1,0 +1,2085 @@
+{
+  "experiment": "TD-MPC2 distributional causal-retention probes",
+  "checkpoint": "C:\\Users\\Administrator\\Desktop\\causal\\external\\tdmpc2\\checkpoints\\mt30-5M.pt",
+  "checkpoint_sha256": "f3c6909e3282f115ce57b2ab29a88e654b4728d819d2c93a4ca079bad63b1455",
+  "checkpoint_metadata": {
+    "task": "mt30",
+    "seed": 1,
+    "model_size": 5,
+    "num_enc_layers": 2,
+    "enc_dim": 256,
+    "mlp_dim": 512,
+    "latent_dim": 512,
+    "task_dim": 64,
+    "num_q": 5,
+    "dropout": 0.01,
+    "simnorm_dim": 8,
+    "num_bins": 101,
+    "vmin": -10,
+    "vmax": 10,
+    "algorithm": "tdmpc2",
+    "author": "Nicklas Hansen",
+    "date": "2023-08-13"
+  },
+  "tasks": [
+    "cheetah-run",
+    "walker-walk",
+    "reacher-easy"
+  ],
+  "seeds": 3,
+  "horizons": [
+    1,
+    2,
+    4
+  ],
+  "pulse": 0.25,
+  "source_train_queries": 900,
+  "source_test_queries": 240,
+  "target_test_queries": 240,
+  "adaptation_states_per_actuator": 5,
+  "rows": [
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 0.8787344694137573,
+      "tail_error": 1.7869995949061084,
+      "cosine": 0.7072133421897888,
+      "target_accuracy": 0.45416666666666666,
+      "sign_accuracy": 0.8791666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.689197301864624,
+      "tail_error": 1.4922753342104864,
+      "cosine": 0.7552779912948608,
+      "target_accuracy": 0.5125,
+      "sign_accuracy": 0.8916666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.0224779844284058,
+      "tail_error": 2.0765820897407568,
+      "cosine": 0.38162940740585327,
+      "target_accuracy": 0.44583333333333336,
+      "sign_accuracy": 0.7166666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 0.9711900353431702,
+      "tail_error": 1.7824327832844677,
+      "cosine": 0.47146543860435486,
+      "target_accuracy": 0.39166666666666666,
+      "sign_accuracy": 0.7916666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.6473354697227478,
+      "tail_error": 1.3356218045498558,
+      "cosine": 0.7362239956855774,
+      "target_accuracy": 0.5291666666666667,
+      "sign_accuracy": 0.9125
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.6473354697227478,
+      "tail_error": 1.3356218045498558,
+      "cosine": 0.7362239956855774,
+      "target_accuracy": 0.5291666666666667,
+      "sign_accuracy": 0.9125
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.6849112510681152,
+      "tail_error": 1.4202239080147976,
+      "cosine": 0.6952582001686096,
+      "target_accuracy": 0.55,
+      "sign_accuracy": 0.9166666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 0.9365817308425903,
+      "tail_error": 1.7897236740601337,
+      "cosine": 0.537275493144989,
+      "target_accuracy": 0.4666666666666667,
+      "sign_accuracy": 0.825
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.6849112510681152,
+      "tail_error": 1.4202239080147976,
+      "cosine": 0.6952582001686096,
+      "target_accuracy": 0.55,
+      "sign_accuracy": 0.9166666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.6849112510681152,
+      "tail_error": 1.4202239080147976,
+      "cosine": 0.6952582001686096,
+      "target_accuracy": 0.55,
+      "sign_accuracy": 0.9166666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.8349207639694214,
+      "tail_error": 3.033988996054297,
+      "cosine": -0.774225652217865,
+      "target_accuracy": 0.5916666666666667,
+      "sign_accuracy": 0.05
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.0626143217086792,
+      "tail_error": 1.9118107903027433,
+      "cosine": 0.2458782196044922,
+      "target_accuracy": 0.44166666666666665,
+      "sign_accuracy": 0.775
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.6321943998336792,
+      "tail_error": 1.4385930862626726,
+      "cosine": 0.7851486206054688,
+      "target_accuracy": 0.6666666666666666,
+      "sign_accuracy": 0.9666666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.6321943998336792,
+      "tail_error": 1.4385930862626726,
+      "cosine": 0.7851486206054688,
+      "target_accuracy": 0.6666666666666666,
+      "sign_accuracy": 0.9666666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 1.0591503381729126,
+      "tail_error": 2.317856036352335,
+      "cosine": 0.7132183909416199,
+      "target_accuracy": 0.4875,
+      "sign_accuracy": 0.9166666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.8047252297401428,
+      "tail_error": 1.6099701781652158,
+      "cosine": 0.7550387978553772,
+      "target_accuracy": 0.4791666666666667,
+      "sign_accuracy": 0.9583333333333334
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.9870174527168274,
+      "tail_error": 2.0085680420651886,
+      "cosine": 0.4646056592464447,
+      "target_accuracy": 0.4125,
+      "sign_accuracy": 0.7833333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 0.731820821762085,
+      "tail_error": 1.3391887977258043,
+      "cosine": 0.6037985682487488,
+      "target_accuracy": 0.44166666666666665,
+      "sign_accuracy": 0.8541666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.6779205799102783,
+      "tail_error": 1.3265909392923876,
+      "cosine": 0.7462440729141235,
+      "target_accuracy": 0.49166666666666664,
+      "sign_accuracy": 0.925
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.6779205799102783,
+      "tail_error": 1.3265909392923876,
+      "cosine": 0.7462440729141235,
+      "target_accuracy": 0.49166666666666664,
+      "sign_accuracy": 0.925
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.6268452405929565,
+      "tail_error": 1.2704359702523074,
+      "cosine": 0.7592376470565796,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.925
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 0.6580942273139954,
+      "tail_error": 1.2306034512929238,
+      "cosine": 0.6828436255455017,
+      "target_accuracy": 0.5333333333333333,
+      "sign_accuracy": 0.8916666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.6268452405929565,
+      "tail_error": 1.2704359702523074,
+      "cosine": 0.7592376470565796,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.925
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.6268452405929565,
+      "tail_error": 1.2704359702523074,
+      "cosine": 0.7592376470565796,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.925
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.804049015045166,
+      "tail_error": 3.1854429060011733,
+      "cosine": -0.7353466153144836,
+      "target_accuracy": 0.75,
+      "sign_accuracy": 0.025
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 0.989346444606781,
+      "tail_error": 1.8252027548613396,
+      "cosine": 0.2644787132740021,
+      "target_accuracy": 0.6166666666666667,
+      "sign_accuracy": 0.725
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.662184476852417,
+      "tail_error": 1.263439505625352,
+      "cosine": 0.776350736618042,
+      "target_accuracy": 0.775,
+      "sign_accuracy": 0.9833333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.662184476852417,
+      "tail_error": 1.263439505625352,
+      "cosine": 0.776350736618042,
+      "target_accuracy": 0.775,
+      "sign_accuracy": 0.9833333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 1.1246635913848877,
+      "tail_error": 2.317850391683938,
+      "cosine": 0.7688996195793152,
+      "target_accuracy": 0.5625,
+      "sign_accuracy": 0.9375
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.609477698802948,
+      "tail_error": 1.2429892659604185,
+      "cosine": 0.8063498139381409,
+      "target_accuracy": 0.6083333333333333,
+      "sign_accuracy": 0.95
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.9994544386863708,
+      "tail_error": 2.1653469859007832,
+      "cosine": 0.4764692485332489,
+      "target_accuracy": 0.5166666666666667,
+      "sign_accuracy": 0.7541666666666667
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 0.8516959547996521,
+      "tail_error": 1.7100621953905029,
+      "cosine": 0.5926777124404907,
+      "target_accuracy": 0.4,
+      "sign_accuracy": 0.8541666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.6239352226257324,
+      "tail_error": 1.2382239376200452,
+      "cosine": 0.8087589740753174,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.9625
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.6239352226257324,
+      "tail_error": 1.2382239376200452,
+      "cosine": 0.8087589740753174,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.9625
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.6409334540367126,
+      "tail_error": 1.290374830085627,
+      "cosine": 0.7608334422111511,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.9333333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 0.8880212306976318,
+      "tail_error": 1.7462426518848544,
+      "cosine": 0.6003204584121704,
+      "target_accuracy": 0.39166666666666666,
+      "sign_accuracy": 0.9166666666666666
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.6409334540367126,
+      "tail_error": 1.290374830085627,
+      "cosine": 0.7608334422111511,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.9333333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.6409334540367126,
+      "tail_error": 1.290374830085627,
+      "cosine": 0.7608334422111511,
+      "target_accuracy": 0.575,
+      "sign_accuracy": 0.9333333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.73502779006958,
+      "tail_error": 2.9418135160649634,
+      "cosine": -0.8631468415260315,
+      "target_accuracy": 0.9083333333333333,
+      "sign_accuracy": 0.008333333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 0.7473158240318298,
+      "tail_error": 1.4123860632701184,
+      "cosine": 0.5530211329460144,
+      "target_accuracy": 0.6666666666666666,
+      "sign_accuracy": 0.8833333333333333
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.49464312195777893,
+      "tail_error": 1.0407954791516973,
+      "cosine": 0.8735516667366028,
+      "target_accuracy": 0.9166666666666666,
+      "sign_accuracy": 0.975
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.49464312195777893,
+      "tail_error": 1.0407954791516973,
+      "cosine": 0.8735516667366028,
+      "target_accuracy": 0.9166666666666666,
+      "sign_accuracy": 0.975
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 1.610123872756958,
+      "tail_error": 2.9337635679512375,
+      "cosine": 0.712844967842102,
+      "target_accuracy": 0.6666666666666666,
+      "sign_accuracy": 0.8791666666666667
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.7906033396720886,
+      "tail_error": 1.7641771143477083,
+      "cosine": 0.756271481513977,
+      "target_accuracy": 0.6333333333333333,
+      "sign_accuracy": 0.9083333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.429728627204895,
+      "tail_error": 2.790855468650649,
+      "cosine": 0.27956703305244446,
+      "target_accuracy": 0.5125,
+      "sign_accuracy": 0.6791666666666667
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 5.19127893447876,
+      "tail_error": 6.949647289541201,
+      "cosine": 0.5495205521583557,
+      "target_accuracy": 0.4708333333333333,
+      "sign_accuracy": 0.8208333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.9629483819007874,
+      "tail_error": 1.9370246701072171,
+      "cosine": 0.7507039308547974,
+      "target_accuracy": 0.6041666666666666,
+      "sign_accuracy": 0.9333333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.9629483819007874,
+      "tail_error": 1.9370246701072171,
+      "cosine": 0.7507039308547974,
+      "target_accuracy": 0.6041666666666666,
+      "sign_accuracy": 0.9333333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.3472187519073486,
+      "tail_error": 3.1213054486237186,
+      "cosine": 0.7146084904670715,
+      "target_accuracy": 0.6416666666666667,
+      "sign_accuracy": 0.8583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 4.051107406616211,
+      "tail_error": 7.815728315679653,
+      "cosine": 0.45186328887939453,
+      "target_accuracy": 0.44166666666666665,
+      "sign_accuracy": 0.7083333333333334
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 1.3472187519073486,
+      "tail_error": 3.1213054486237186,
+      "cosine": 0.7146084904670715,
+      "target_accuracy": 0.6416666666666667,
+      "sign_accuracy": 0.8583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 1.3472187519073486,
+      "tail_error": 3.1213054486237186,
+      "cosine": 0.7146084904670715,
+      "target_accuracy": 0.6416666666666667,
+      "sign_accuracy": 0.8583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.5786566734313965,
+      "tail_error": 2.5262514065460095,
+      "cosine": -0.887344241142273,
+      "target_accuracy": 0.5333333333333333,
+      "sign_accuracy": 0.016666666666666666
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.8004533052444458,
+      "tail_error": 3.743309347921901,
+      "cosine": 0.645236074924469,
+      "target_accuracy": 0.31666666666666665,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.6953034996986389,
+      "tail_error": 1.4973939933811495,
+      "cosine": 0.8838073015213013,
+      "target_accuracy": 0.525,
+      "sign_accuracy": 0.975
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.6953034996986389,
+      "tail_error": 1.4973939933811495,
+      "cosine": 0.8838073015213013,
+      "target_accuracy": 0.525,
+      "sign_accuracy": 0.975
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 1.0055863857269287,
+      "tail_error": 2.0113108157474455,
+      "cosine": 0.41700485348701477,
+      "target_accuracy": 0.4,
+      "sign_accuracy": 0.7833333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.8719721436500549,
+      "tail_error": 1.649068021635174,
+      "cosine": 0.4597129821777344,
+      "target_accuracy": 0.44583333333333336,
+      "sign_accuracy": 0.7708333333333334
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.9640677571296692,
+      "tail_error": 1.8636508165520604,
+      "cosine": 0.27331259846687317,
+      "target_accuracy": 0.37916666666666665,
+      "sign_accuracy": 0.6875
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 1.0234876871109009,
+      "tail_error": 1.8970432763861158,
+      "cosine": 0.28275543451309204,
+      "target_accuracy": 0.275,
+      "sign_accuracy": 0.675
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.9200074076652527,
+      "tail_error": 1.8759539317462723,
+      "cosine": 0.4009351432323456,
+      "target_accuracy": 0.35,
+      "sign_accuracy": 0.7583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.9200074076652527,
+      "tail_error": 1.8759539317462723,
+      "cosine": 0.4009351432323456,
+      "target_accuracy": 0.35,
+      "sign_accuracy": 0.7583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.8843194842338562,
+      "tail_error": 1.8047181294466457,
+      "cosine": 0.45135194063186646,
+      "target_accuracy": 0.5083333333333333,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 1.0105159282684326,
+      "tail_error": 1.8659447782646303,
+      "cosine": 0.29442349076271057,
+      "target_accuracy": 0.2833333333333333,
+      "sign_accuracy": 0.7166666666666667
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.8843194842338562,
+      "tail_error": 1.8047181294466457,
+      "cosine": 0.45135194063186646,
+      "target_accuracy": 0.5083333333333333,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.8843194842338562,
+      "tail_error": 1.8047181294466457,
+      "cosine": 0.45135194063186646,
+      "target_accuracy": 0.5083333333333333,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.322271466255188,
+      "tail_error": 2.540018809996216,
+      "cosine": -0.36101284623146057,
+      "target_accuracy": 0.4083333333333333,
+      "sign_accuracy": 0.25833333333333336
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.3542752265930176,
+      "tail_error": 2.8391043237952753,
+      "cosine": 0.18985046446323395,
+      "target_accuracy": 0.15833333333333333,
+      "sign_accuracy": 0.725
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 1.084228277206421,
+      "tail_error": 2.5483334608586676,
+      "cosine": 0.3461667597293854,
+      "target_accuracy": 0.38333333333333336,
+      "sign_accuracy": 0.775
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 1.084228277206421,
+      "tail_error": 2.5483334608586676,
+      "cosine": 0.3461667597293854,
+      "target_accuracy": 0.38333333333333336,
+      "sign_accuracy": 0.775
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 0.9487566351890564,
+      "tail_error": 1.9932033388906951,
+      "cosine": 0.44317683577537537,
+      "target_accuracy": 0.48333333333333334,
+      "sign_accuracy": 0.7583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.8615210056304932,
+      "tail_error": 1.8406590036502972,
+      "cosine": 0.489950567483902,
+      "target_accuracy": 0.36666666666666664,
+      "sign_accuracy": 0.7916666666666666
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.0691428184509277,
+      "tail_error": 2.242727532235854,
+      "cosine": 0.15719780325889587,
+      "target_accuracy": 0.4125,
+      "sign_accuracy": 0.5416666666666666
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 1.0510728359222412,
+      "tail_error": 2.0865773114059123,
+      "cosine": 0.3811025023460388,
+      "target_accuracy": 0.44583333333333336,
+      "sign_accuracy": 0.7125
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.8822721242904663,
+      "tail_error": 1.8862003938942948,
+      "cosine": 0.5169650316238403,
+      "target_accuracy": 0.39166666666666666,
+      "sign_accuracy": 0.7916666666666666
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.8822721242904663,
+      "tail_error": 1.8862003938942948,
+      "cosine": 0.5169650316238403,
+      "target_accuracy": 0.39166666666666666,
+      "sign_accuracy": 0.7916666666666666
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.9275094270706177,
+      "tail_error": 1.837960673661023,
+      "cosine": 0.4455205798149109,
+      "target_accuracy": 0.31666666666666665,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 1.1746951341629028,
+      "tail_error": 2.1459293959763883,
+      "cosine": 0.21999524533748627,
+      "target_accuracy": 0.30833333333333335,
+      "sign_accuracy": 0.65
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.9275094270706177,
+      "tail_error": 1.837960673661023,
+      "cosine": 0.4455205798149109,
+      "target_accuracy": 0.31666666666666665,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.9275094270706177,
+      "tail_error": 1.837960673661023,
+      "cosine": 0.4455205798149109,
+      "target_accuracy": 0.31666666666666665,
+      "sign_accuracy": 0.8
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.3829492330551147,
+      "tail_error": 3.0409167305035627,
+      "cosine": -0.6211069226264954,
+      "target_accuracy": 0.7583333333333333,
+      "sign_accuracy": 0.15
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 0.8921664953231812,
+      "tail_error": 1.7429187019017736,
+      "cosine": 0.5916591286659241,
+      "target_accuracy": 0.8916666666666667,
+      "sign_accuracy": 0.8333333333333334
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.7804067730903625,
+      "tail_error": 1.7609321415617514,
+      "cosine": 0.6122951507568359,
+      "target_accuracy": 0.725,
+      "sign_accuracy": 0.8583333333333333
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.7804067730903625,
+      "tail_error": 1.7609321415617514,
+      "cosine": 0.6122951507568359,
+      "target_accuracy": 0.725,
+      "sign_accuracy": 0.8583333333333333
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 0.06057000905275345,
+      "tail_error": 0.15031557151450695,
+      "cosine": 0.9929203391075134,
+      "target_accuracy": 0.9666666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.4222571849822998,
+      "tail_error": 1.1338745868832032,
+      "cosine": 0.976510763168335,
+      "target_accuracy": 0.9166666666666666,
+      "sign_accuracy": 0.9958333333333333
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.1171060800552368,
+      "tail_error": 2.299211733113682,
+      "cosine": -0.07002504169940948,
+      "target_accuracy": 0.8875,
+      "sign_accuracy": 0.4625
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 1.3318688869476318,
+      "tail_error": 2.594898850906235,
+      "cosine": 0.1663094162940979,
+      "target_accuracy": 0.6916666666666667,
+      "sign_accuracy": 0.6625
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.3741912543773651,
+      "tail_error": 1.0735766336716095,
+      "cosine": 0.9842300415039062,
+      "target_accuracy": 0.9375,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.3741912543773651,
+      "tail_error": 1.0735766336716095,
+      "cosine": 0.9842300415039062,
+      "target_accuracy": 0.9375,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.4299156367778778,
+      "tail_error": 1.147805598998293,
+      "cosine": 0.9925678372383118,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 1.064055323600769,
+      "tail_error": 1.8605992873285213,
+      "cosine": 0.4824216067790985,
+      "target_accuracy": 0.325,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.4299156367778778,
+      "tail_error": 1.147805598998293,
+      "cosine": 0.9925678372383118,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.4299156367778778,
+      "tail_error": 1.147805598998293,
+      "cosine": 0.9925678372383118,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.9685044288635254,
+      "tail_error": 3.262361477405167,
+      "cosine": -0.9968350529670715,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 0.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.749054193496704,
+      "tail_error": 3.5147237739827575,
+      "cosine": -0.022270791232585907,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 0.5
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.1178094744682312,
+      "tail_error": 0.3400619041348338,
+      "cosine": 0.9949038028717041,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.1178094744682312,
+      "tail_error": 0.3400619041348338,
+      "cosine": 0.9949038028717041,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 0.015396703034639359,
+      "tail_error": 0.036057942878360234,
+      "cosine": 0.9993985295295715,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.3472667634487152,
+      "tail_error": 1.0061430959270834,
+      "cosine": 0.9933319687843323,
+      "target_accuracy": 0.9791666666666666,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.6303737163543701,
+      "tail_error": 3.7109033764160606,
+      "cosine": 0.03493720293045044,
+      "target_accuracy": 0.8291666666666667,
+      "sign_accuracy": 0.5166666666666667
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 1.5777688026428223,
+      "tail_error": 3.792421475797805,
+      "cosine": 0.2851031720638275,
+      "target_accuracy": 0.5666666666666667,
+      "sign_accuracy": 0.7291666666666666
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.33880728483200073,
+      "tail_error": 0.9934438595763164,
+      "cosine": 0.9909105896949768,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.33880728483200073,
+      "tail_error": 0.9934438595763164,
+      "cosine": 0.9909105896949768,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.205928772687912,
+      "tail_error": 0.516417464265485,
+      "cosine": 0.996169924736023,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 2.4240996837615967,
+      "tail_error": 4.8441777169209415,
+      "cosine": 0.5547264218330383,
+      "target_accuracy": 0.4166666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.205928772687912,
+      "tail_error": 0.516417464265485,
+      "cosine": 0.996169924736023,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.205928772687912,
+      "tail_error": 0.516417464265485,
+      "cosine": 0.996169924736023,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.7340703010559082,
+      "tail_error": 3.5299767815088763,
+      "cosine": -0.993790328502655,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 0.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.3432466983795166,
+      "tail_error": 3.0361343169279125,
+      "cosine": -0.010979080572724342,
+      "target_accuracy": 0.6666666666666666,
+      "sign_accuracy": 0.5
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.3878197968006134,
+      "tail_error": 1.0868491428165277,
+      "cosine": 0.9878422021865845,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.3878197968006134,
+      "tail_error": 1.0868491428165277,
+      "cosine": 0.9878422021865845,
+      "target_accuracy": 0.9833333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "nrmse": 0.042270462960004807,
+      "tail_error": 0.10580044897027796,
+      "cosine": 0.9978573322296143,
+      "target_accuracy": 0.9958333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "nrmse": 0.2596656084060669,
+      "tail_error": 0.7035737542524001,
+      "cosine": 0.9908827543258667,
+      "target_accuracy": 0.9708333333333333,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.0242018699645996,
+      "tail_error": 2.025880454736398,
+      "cosine": -0.016653673723340034,
+      "target_accuracy": 0.9166666666666666,
+      "sign_accuracy": 0.4791666666666667
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "nrmse": 1.1986441612243652,
+      "tail_error": 2.5682407799869726,
+      "cosine": 0.3047592341899872,
+      "target_accuracy": 0.6375,
+      "sign_accuracy": 0.7375
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "nrmse": 0.24008707702159882,
+      "tail_error": 0.6350370036311676,
+      "cosine": 0.9931887984275818,
+      "target_accuracy": 0.95,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "nrmse": 0.24008707702159882,
+      "tail_error": 0.6350370036311676,
+      "cosine": 0.9931887984275818,
+      "target_accuracy": 0.95,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 0.3052200973033905,
+      "tail_error": 0.7979881116269207,
+      "cosine": 0.9966863989830017,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "nrmse": 0.9298506379127502,
+      "tail_error": 1.8160570639281433,
+      "cosine": 0.602765679359436,
+      "target_accuracy": 0.35833333333333334,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "nrmse": 0.3052200973033905,
+      "tail_error": 0.7979881116269207,
+      "cosine": 0.9966863989830017,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "nrmse": 0.3052200973033905,
+      "tail_error": 0.7979881116269207,
+      "cosine": 0.9966863989830017,
+      "target_accuracy": 0.9916666666666667,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "nrmse": 1.9473021030426025,
+      "tail_error": 3.1255389080486933,
+      "cosine": -0.9847985506057739,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 0.008333333333333333
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "nrmse": 1.648398995399475,
+      "tail_error": 3.1973694099708525,
+      "cosine": 0.0014055807841941714,
+      "target_accuracy": 0.975,
+      "sign_accuracy": 0.5
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "nrmse": 0.10776074975728989,
+      "tail_error": 0.270454080810326,
+      "cosine": 0.9980812072753906,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 1.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "nrmse": 0.10776074975728989,
+      "tail_error": 0.270454080810326,
+      "cosine": 0.9980812072753906,
+      "target_accuracy": 1.0,
+      "sign_accuracy": 1.0
+    }
+  ],
+  "summary": [
+    {
+      "condition": "source",
+      "method": "TD-MPC2 linear probe",
+      "runs": 9,
+      "nrmse": 0.749472496410211,
+      "nrmse_se": 0.19050354650360757,
+      "tail_error": 1.5170175232105452,
+      "tail_error_se": 0.37055632361207436,
+      "cosine": 0.7502815789646573,
+      "cosine_se": 0.07384198217172822,
+      "target_accuracy": 0.6675925925925926,
+      "target_accuracy_se": 0.08306605800892015,
+      "sign_accuracy": 0.9060185185185186,
+      "sign_accuracy_se": 0.03025508125424488
+    },
+    {
+      "condition": "source",
+      "method": "TD-MPC2 nonlinear probe",
+      "runs": 9,
+      "nrmse": 0.6285206973552704,
+      "nrmse_se": 0.07751553116593483,
+      "tail_error": 1.3825255950035542,
+      "tail_error_se": 0.1277096375587976,
+      "cosine": 0.7759252356158363,
+      "cosine_se": 0.0664217536084978,
+      "target_accuracy": 0.6569444444444444,
+      "target_accuracy_se": 0.07940995754957114,
+      "sign_accuracy": 0.9185185185185186,
+      "sign_accuracy_se": 0.029001775228291084
+    },
+    {
+      "condition": "target-random",
+      "method": "TD-MPC2 frozen",
+      "runs": 9,
+      "nrmse": 1.1381745272212558,
+      "nrmse_se": 0.07739270704105397,
+      "tail_error": 2.3537473888234923,
+      "tail_error_se": 0.19102758916851115,
+      "cosine": 0.22011558194127348,
+      "cosine_se": 0.06835717617985917,
+      "target_accuracy": 0.5902777777777779,
+      "target_accuracy_se": 0.0737910536499204,
+      "sign_accuracy": 0.6245370370370371,
+      "sign_accuracy_se": 0.04139054599383823
+    },
+    {
+      "condition": "target-random",
+      "method": "global probe-head update",
+      "runs": 9,
+      "nrmse": 1.5476475689146254,
+      "nrmse_se": 0.46321455163173253,
+      "tail_error": 2.746723640047224,
+      "tail_error_se": 0.5768254369624084,
+      "cosine": 0.40416578120655483,
+      "cosine_se": 0.05230159004582055,
+      "target_accuracy": 0.4800925925925926,
+      "target_accuracy_se": 0.04347232082977023,
+      "sign_accuracy": 0.7597222222222222,
+      "sign_accuracy_se": 0.02440456026500774
+    },
+    {
+      "condition": "target-random",
+      "method": "oracle actuator map",
+      "runs": 9,
+      "nrmse": 0.6297227558162477,
+      "nrmse_se": 0.08846660823673053,
+      "tail_error": 1.366852574898796,
+      "tail_error_se": 0.15065335165037566,
+      "cosine": 0.7697956197791629,
+      "cosine_se": 0.06955455350351321,
+      "target_accuracy": 0.6458333333333335,
+      "target_accuracy_se": 0.08230558368019919,
+      "sign_accuracy": 0.9203703703703704,
+      "sign_accuracy_se": 0.02978385066829005
+    },
+    {
+      "condition": "target-random",
+      "method": "selective mechanism update",
+      "runs": 9,
+      "nrmse": 0.6297227558162477,
+      "nrmse_se": 0.08846660823673053,
+      "tail_error": 1.366852574898796,
+      "tail_error_se": 0.15065335165037566,
+      "cosine": 0.7697956197791629,
+      "cosine_se": 0.06955455350351321,
+      "target_accuracy": 0.6458333333333335,
+      "target_accuracy_se": 0.08230558368019919,
+      "sign_accuracy": 0.9203703703703704,
+      "sign_accuracy_se": 0.02978385066829005
+    },
+    {
+      "condition": "target-shifted",
+      "method": "TD-MPC2 frozen",
+      "runs": 9,
+      "nrmse": 1.700861308309767,
+      "nrmse_se": 0.07661121729603874,
+      "tail_error": 3.0207010591254395,
+      "tail_error_se": 0.10789892006605112,
+      "cosine": -0.801956339014901,
+      "cosine_se": 0.06987967435755865,
+      "target_accuracy": 0.7722222222222221,
+      "target_accuracy_se": 0.07425036891457588,
+      "sign_accuracy": 0.0574074074074074,
+      "sign_accuracy_se": 0.02960792028762867
+    },
+    {
+      "condition": "target-shifted",
+      "method": "global probe-head update",
+      "runs": 9,
+      "nrmse": 1.2874301671981812,
+      "nrmse_se": 0.12918143291584563,
+      "tail_error": 2.5803288314371864,
+      "tail_error_se": 0.28779713774522814,
+      "cosine": 0.27314216031744665,
+      "cosine_se": 0.08880608745980656,
+      "target_accuracy": 0.637037037037037,
+      "target_accuracy_se": 0.09739182736969658,
+      "sign_accuracy": 0.6935185185185185,
+      "sign_accuracy_se": 0.05108351039517109
+    },
+    {
+      "condition": "target-shifted",
+      "method": "oracle actuator map",
+      "runs": 9,
+      "nrmse": 0.5513722855183814,
+      "nrmse_se": 0.1047918290291212,
+      "tail_error": 1.249650310511442,
+      "tail_error_se": 0.2327837088798855,
+      "cosine": 0.806460827589035,
+      "cosine_se": 0.07135044112745996,
+      "target_accuracy": 0.7740740740740741,
+      "target_accuracy_se": 0.07370858908059764,
+      "sign_accuracy": 0.9481481481481482,
+      "sign_accuracy_se": 0.026123585147529414
+    },
+    {
+      "condition": "target-shifted",
+      "method": "selective mechanism update",
+      "runs": 9,
+      "nrmse": 0.5513722855183814,
+      "nrmse_se": 0.1047918290291212,
+      "tail_error": 1.249650310511442,
+      "tail_error_se": 0.2327837088798855,
+      "cosine": 0.806460827589035,
+      "cosine_se": 0.07135044112745996,
+      "target_accuracy": 0.7740740740740741,
+      "target_accuracy_se": 0.07370858908059764,
+      "sign_accuracy": 0.9481481481481482,
+      "sign_accuracy_se": 0.026123585147529414
+    },
+    {
+      "condition": "target-stable",
+      "method": "TD-MPC2 frozen",
+      "runs": 9,
+      "nrmse": 0.6725335684087541,
+      "nrmse_se": 0.11665523391742594,
+      "tail_error": 1.467470014997202,
+      "tail_error_se": 0.2503741890306215,
+      "cosine": 0.7569149401452806,
+      "cosine_se": 0.07131823450455678,
+      "target_accuracy": 0.6824074074074075,
+      "target_accuracy_se": 0.08278109198767647,
+      "sign_accuracy": 0.914814814814815,
+      "sign_accuracy_se": 0.026815908254767738
+    },
+    {
+      "condition": "target-stable",
+      "method": "global probe-head update",
+      "runs": 9,
+      "nrmse": 1.45966903368632,
+      "nrmse_se": 0.36531511136108646,
+      "tail_error": 2.7905562594817988,
+      "tail_error_se": 0.7176383302601667,
+      "cosine": 0.4918483677837584,
+      "cosine_se": 0.05015720826507907,
+      "target_accuracy": 0.3916666666666667,
+      "target_accuracy_se": 0.027145583730127865,
+      "sign_accuracy": 0.8564814814814815,
+      "sign_accuracy_se": 0.04591276319736168
+    },
+    {
+      "condition": "target-stable",
+      "method": "oracle actuator map",
+      "runs": 9,
+      "nrmse": 0.6725335684087541,
+      "nrmse_se": 0.11665523391742594,
+      "tail_error": 1.467470014997202,
+      "tail_error_se": 0.2503741890306215,
+      "cosine": 0.7569149401452806,
+      "cosine_se": 0.07131823450455678,
+      "target_accuracy": 0.6824074074074075,
+      "target_accuracy_se": 0.08278109198767647,
+      "sign_accuracy": 0.914814814814815,
+      "sign_accuracy_se": 0.026815908254767738
+    },
+    {
+      "condition": "target-stable",
+      "method": "selective mechanism update",
+      "runs": 9,
+      "nrmse": 0.6725335684087541,
+      "nrmse_se": 0.11665523391742594,
+      "tail_error": 1.467470014997202,
+      "tail_error_se": 0.2503741890306215,
+      "cosine": 0.7569149401452806,
+      "cosine_se": 0.07131823450455678,
+      "target_accuracy": 0.6824074074074075,
+      "target_accuracy_se": 0.08278109198767647,
+      "sign_accuracy": 0.914814814814815,
+      "sign_accuracy_se": 0.026815908254767738
+    }
+  ],
+  "runs": [
+    {
+      "task": "cheetah-run",
+      "seed": 1,
+      "action_dim": 6,
+      "shifted_actuator": 0,
+      "true_gear": [
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 4.151187896728516,
+          "loss_negative": 0.25291961431503296,
+          "selected": -1.0
+        },
+        "1": {
+          "loss_positive": 0.3493826687335968,
+          "loss_negative": 4.209717273712158,
+          "selected": 1.0
+        },
+        "2": {
+          "loss_positive": 0.17691445350646973,
+          "loss_negative": 3.2019150257110596,
+          "selected": 1.0
+        },
+        "3": {
+          "loss_positive": 0.1666344851255417,
+          "loss_negative": 1.1746690273284912,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 0.3751944899559021,
+          "loss_negative": 2.704526901245117,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 0.22733870148658752,
+          "loss_negative": 1.5249748229980469,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 41.08057612800985
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 2,
+      "action_dim": 6,
+      "shifted_actuator": 1,
+      "true_gear": [
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 0.10620401799678802,
+          "loss_negative": 4.602863788604736,
+          "selected": 1.0
+        },
+        "1": {
+          "loss_positive": 2.271118640899658,
+          "loss_negative": 0.6027516722679138,
+          "selected": -1.0
+        },
+        "2": {
+          "loss_positive": 0.2433149516582489,
+          "loss_negative": 2.206162452697754,
+          "selected": 1.0
+        },
+        "3": {
+          "loss_positive": 0.18366993963718414,
+          "loss_negative": 2.4535584449768066,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 0.3085397481918335,
+          "loss_negative": 3.9671859741210938,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 0.08679765462875366,
+          "loss_negative": 2.0675208568573,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 41.5452574398261
+    },
+    {
+      "task": "cheetah-run",
+      "seed": 3,
+      "action_dim": 6,
+      "shifted_actuator": 2,
+      "true_gear": [
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 0.18254029750823975,
+          "loss_negative": 4.18786096572876,
+          "selected": 1.0
+        },
+        "1": {
+          "loss_positive": 0.30293235182762146,
+          "loss_negative": 4.307929039001465,
+          "selected": 1.0
+        },
+        "2": {
+          "loss_positive": 4.026556968688965,
+          "loss_negative": 0.09786707162857056,
+          "selected": -1.0
+        },
+        "3": {
+          "loss_positive": 0.07123413681983948,
+          "loss_negative": 0.234482079744339,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 0.21799930930137634,
+          "loss_negative": 3.399167776107788,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 0.09657274931669235,
+          "loss_negative": 1.5564244985580444,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 22.798832473798587
+    },
+    {
+      "task": "walker-walk",
+      "seed": 1,
+      "action_dim": 6,
+      "shifted_actuator": 0,
+      "true_gear": [
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 3.3690621852874756,
+          "loss_negative": 0.4021618962287903,
+          "selected": -1.0
+        },
+        "1": {
+          "loss_positive": 0.30274268984794617,
+          "loss_negative": 0.5604753494262695,
+          "selected": 1.0
+        },
+        "2": {
+          "loss_positive": 0.12972961366176605,
+          "loss_negative": 1.4959245920181274,
+          "selected": 1.0
+        },
+        "3": {
+          "loss_positive": 0.06721051782369614,
+          "loss_negative": 2.124798059463501,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 0.06849165260791779,
+          "loss_negative": 0.25573524832725525,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 0.013232962228357792,
+          "loss_negative": 0.01829129084944725,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 69.56197381702664
+    },
+    {
+      "task": "walker-walk",
+      "seed": 2,
+      "action_dim": 6,
+      "shifted_actuator": 1,
+      "true_gear": [
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 1.2099320888519287,
+          "loss_negative": 14.839638710021973,
+          "selected": 1.0
+        },
+        "1": {
+          "loss_positive": 8.00918197631836,
+          "loss_negative": 3.486886501312256,
+          "selected": -1.0
+        },
+        "2": {
+          "loss_positive": 3.390744209289551,
+          "loss_negative": 6.476089954376221,
+          "selected": 1.0
+        },
+        "3": {
+          "loss_positive": 5.481508255004883,
+          "loss_negative": 16.94860076904297,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 1.9848542213439941,
+          "loss_negative": 3.2466938495635986,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 3.18514084815979,
+          "loss_negative": 8.133283615112305,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 228.89026097391087
+    },
+    {
+      "task": "walker-walk",
+      "seed": 3,
+      "action_dim": 6,
+      "shifted_actuator": 2,
+      "true_gear": [
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        1.0,
+        1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 2.440309762954712,
+          "loss_negative": 2.266418218612671,
+          "selected": 1.0
+        },
+        "1": {
+          "loss_positive": 0.5137360095977783,
+          "loss_negative": 2.940351963043213,
+          "selected": 1.0
+        },
+        "2": {
+          "loss_positive": 31.299888610839844,
+          "loss_negative": 7.5765838623046875,
+          "selected": -1.0
+        },
+        "3": {
+          "loss_positive": 1.6538887023925781,
+          "loss_negative": 8.833099365234375,
+          "selected": 1.0
+        },
+        "4": {
+          "loss_positive": 1.176390290260315,
+          "loss_negative": 2.952326774597168,
+          "selected": 1.0
+        },
+        "5": {
+          "loss_positive": 6.496695518493652,
+          "loss_negative": 19.504907608032227,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 258.55785314854035
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 1,
+      "action_dim": 2,
+      "shifted_actuator": 0,
+      "true_gear": [
+        -1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        -1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 2.1026549339294434,
+          "loss_negative": 0.015879428014159203,
+          "selected": -1.0
+        },
+        "1": {
+          "loss_positive": 0.0009713482577353716,
+          "loss_negative": 1.926336646080017,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 0.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 2,
+      "action_dim": 2,
+      "shifted_actuator": 1,
+      "true_gear": [
+        1.0,
+        -1.0
+      ],
+      "estimated_gear": [
+        1.0,
+        -1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 0.0018874539528042078,
+          "loss_negative": 0.8991281390190125,
+          "selected": 1.0
+        },
+        "1": {
+          "loss_positive": 4.811480522155762,
+          "loss_negative": 0.2996830940246582,
+          "selected": -1.0
+        }
+      },
+      "policy_return": 12.0
+    },
+    {
+      "task": "reacher-easy",
+      "seed": 3,
+      "action_dim": 2,
+      "shifted_actuator": 0,
+      "true_gear": [
+        -1.0,
+        1.0
+      ],
+      "estimated_gear": [
+        -1.0,
+        1.0
+      ],
+      "localized": true,
+      "diagnostic_losses": {
+        "0": {
+          "loss_positive": 1.225056767463684,
+          "loss_negative": 0.005697828717529774,
+          "selected": -1.0
+        },
+        "1": {
+          "loss_positive": 4.4282558519626036e-05,
+          "loss_negative": 2.886538028717041,
+          "selected": 1.0
+        }
+      },
+      "policy_return": 17.0
+    }
+  ],
+  "localization_rate": 1.0,
+  "diagnostic_margin_sensitivity": [
+    {
+      "loss_ratio_threshold": 0.45,
+      "localization_rate": 1.0
+    },
+    {
+      "loss_ratio_threshold": 0.5,
+      "localization_rate": 1.0
+    },
+    {
+      "loss_ratio_threshold": 0.6,
+      "localization_rate": 1.0
+    },
+    {
+      "loss_ratio_threshold": 0.75,
+      "localization_rate": 1.0
+    },
+    {
+      "loss_ratio_threshold": 0.9,
+      "localization_rate": 1.0
+    }
+  ]
+}

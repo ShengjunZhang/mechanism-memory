@@ -1,0 +1,22 @@
+{
+  "increment_index": 0,
+  "tuned_tree_filter": "conflict0",
+  "development_guard_pass": true,
+  "development_summary_sha256": "e6ec1a5d0adb543a9761407d222a924a8d2cb33af0887a64fddbd1a38f1deaab",
+  "development_selection_sha256": "c4c421cdf9ccf1d9ed75bd95e910fe94ebe9d16d9e5f50862df30ec1b66d3140",
+  "ancestor_protocol_sha256": "f47bb6254b946c347f8797c369019dfc879e2abe45ff6158cf44859dc27e9da9",
+  "parent_protocol_sha256": "2bc5ee005bf3a21db092ed3eb25cda068f59150342cb43d706dca339c7883df4",
+  "protocol_sha256": "bd38471333c7691a079c0f9bbb7998cf2bf38e9f1a668e3b6fa22673adda8b04",
+  "source_hashes": {
+    "core.py": "e9fd951dffcecdc9914b597a54df5426e8c66383e292a123069614f3ed694537",
+    "causal_core.py": "c92ada5f156731b3262354d1002af60d7b77262bab12ad05e22b94a6ff4fc49a",
+    "memory.py": "6ed0a43fb382047d4a84bbffffe512d924643de92415a54bab9579796fcaa2a6",
+    "observation.py": "367d1f6f3831d2d0397f08e6d6b4bca301686042e16b03db70c547ab91c73c6d",
+    "revision_memory.py": "4d34856e0af232580c5405488725937f60522e1a63f298e1c94ff84a35d5a0d4",
+    "context_readout_memory_followup.py": "75fc05e8c43c68ad9ae1c4a51fffb2a9f2e65dbd4c890b80485951b2a6f28555",
+    "noisy_readout_filter_followup.py": "2df15a710975fe12fe2c01592e599ce80391160323ad9f2411b7a3a67ac489e1",
+    "noisy_readout_threshold_followup.py": "215cdca438699739cf0afa4381aa8441395e365497544edea883ed33b32d365c",
+    "readout_increment_followup.py": "e2885272d718061fc8bdefd0ba6fe5b48b2b45c70b45d60c8fc2859093716d85",
+    "readout_conflict_followup.py": "2fe292640c3a0985e7d41668fc54ea773dd2a18fada219cc610b9a748d629a3d"
+  }
+}

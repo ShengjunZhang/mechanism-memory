@@ -1,0 +1,393 @@
+Mechanism Memory: reproduction instructions (updated 21 November 2026)
+=================================================================
+
+Run commands from the project root with Python 3.12. H below means
+data/historical/; R means data/controlled/results/.
+P means analysis/historical/; E means data/controlled/experiments/.
+This map distinguishes saved-byte validation, saved-result replotting and new
+protocol runs. It does not establish preregistration or an earlier tuning history.
+
+1. Versions and lightweight commands
+------------------------------------
+
+data/controlled/experiments/reproduction_snapshot.json pins 21 historical archive members and
+75 inspected source/result files by SHA-256. These are inspected bytes, not an
+inferred original-run commit. The two archived neural drivers equal their
+causal_sandbox copies byte for byte. Other historical drivers are not in that
+old data archive; the snapshot pins the current inspected implementation.
+The historical baseline snapshot is
+c1655d69b5a8316b67d5f09cac0a4df9f97c8fe6.
+
+python -m pip install -r requirements.txt
+python reproduce.py map
+python reproduce.py validate
+python reproduce.py figures --output ../reproduced_figures
+python -B analysis/tools/test_historical_reproduction.py
+
+The replot output must be a NEW directory outside the checkout. It produces
+six data figures in PDF/PNG, table_inputs/ and replot_record.json. It reads saved
+intervals without bootstrapping and fits no model. --scope historical selects
+the three historical data figures; --scope added selects the three added ones.
+Validation needs only the standard library; replot additionally needs numpy and
+matplotlib. Neither command loads neural weights, imports torch/transformers,
+acquires interventions or trains a decoder. Rendering/font/PDF metadata can
+differ from the original PDFs. Validation checks saved hashes and the archived
+verify_reported_results.py assertions, not an independent experimental rerun.
+
+The driver reads H directly from the repository. An optional --source-zip PATH
+accepts the original data archive; its required SHA-256 is
+1630d251114f5de421ff60aa5365ff3eecb050d4387d9fac4b6ebf65bf0ea248.
+Both input modes check member hashes. Historical plotting scripts run from
+temporary copies. Run commands from the repository root. manifest.json records
+the measured dependency versions, not a recovered historical software/BLAS/CUDA
+environment.
+
+2. Complete result-to-source map
+--------------------------------
+
+Historical raw filenames below are relative to H/raw_json/. LaTeX labels are
+stable result identifiers, not assertions about current page/table numbering.
+
+Retained historical tables:
+- tab:matched-baselines: matched_mechanism_baselines_8families_2seeds.json,
+  matched_mechanism_baselines.summary/runs/threshold_sweep. Command H2.
+- tab:ranking-adaptation: ranking_and_adaptation_baselines_8families_2seeds.json,
+  summary and runs.hidden/hidden_causal_core/renamed_adaptation/
+  semantic_readout_adaptation. H3; the current-driver schema differs.
+- tab:continuous-results: continuous_metric_comparison_20seeds.json summary/runs.
+  H4. Its shared fields equal the first noise=0.02 payload of H5, although the
+  standalone file itself does not store noise.
+- tab:tdmpc2-responses: tdmpc2_distributional_retention_3tasks_3seeds.json runs/rows;
+  H/SourceData_Table4_tdmpc2_by_task.csv. H6.
+- tab:llm-hidden-results: llm_hidden_retention_12train_6test.json rows;
+  H/SourceData_Fig4_llm_hidden_retention.csv, selected methods/groups. H7.
+- tab:llm-proposal-results: llm_proposal_policy_comparison_3seeds.json,
+  worlds.panel-complex-noisy-hidden.*.summary/runs;
+  H/SourceData_Table5_llm_proposal_policies.csv. H8.
+
+Retained main data figures:
+- fig:main-results-v10: H/SourceData_Fig2_fixed_probe_outcomes.csv.
+  Panel a uses finite_agent_comparison_complex_100x5.json for passive/reward and
+  matched_mechanism_baselines_8families_2seeds.json for other rows; baseline rows
+  use readout-oracle variants and F1-oracle threshold selection.
+  Panels b/d use llm_proposal_policy_comparison_3seeds.json; panel c uses
+  ranking_and_adaptation_baselines_8families_2seeds.json.
+  Renderer: P/make_probe_figures.py:73-159, make_overview(). H1/H2/H3/H8.
+- fig:tdmpc2-retention: tdmpc2_distributional_retention_3tasks_3seeds.json summary;
+  H/SourceData_Fig3_tdmpc2_distributional_retention.csv.
+  Renderer: P/tdmpc2_retention.py:815-889, _make_figure(). H6.
+- fig:llm-hidden-retention: H/SourceData_Fig4_llm_hidden_retention.csv, from the
+  hidden-retention JSON rows. Renderer: P/make_llm_hidden_figure.py, main(). H7.
+- fig:overview is a schematic with no numerical source data, not a replot target.
+  H/SourceData_Fig2_cross_domain_mechanism_gap.csv is auxiliary source data, not
+  an additional retained main figure or an input to make_overview().
+
+Retained numerical text:
+- Coarse interfaces: finite_agent_comparison_complex_100x5.json,
+  results.panel-complex-noisy-hidden.100.summary. H1.
+- Noise robustness: continuous_noise_sweep_20seeds.json,
+  continuous_noise_sweep.summary/payloads. H5.
+- Candidate caps and hidden-recall horizons: candidate_budget_sensitivity_4families.json,
+  candidate_budget_sensitivity.configs/runs/summary. H9.
+
+Added experiments and derived scores:
+- tab:tdmpc2-independent and fig:tdmpc2-independent: R/tdmpc2/main_results.csv,
+  target-shifted/target-stable; combined_summary.json settings.default.primary.
+- fig:tdmpc2-sensitivity: R/tdmpc2/combined_summary.json settings.*.primary,
+  including default/pulse010/pulse040. Per-network grids:
+  R/tdmpc2/{default,pulse010,pulse040}/tdmpc2_<task>_<training_seed>.json. A1.
+- tab:tdmpc2-decoders: default per-network JSON rows with condition=target-shifted,
+  budget=5 and decoder=ridge20/ridge100/neural256; global residual alpha=5,
+  selective update ratio=0.5, or matched sign prior. Average sign_accuracy over
+  fifteen networks; DO NOT filter source_selected_decoder for this table. A1.
+- tab:finite-tuples: R/finite_results.json controlled_aggregate/controlled_runs.
+- tab:finite-budget: R/finite_budget_curve.json budgets, and finite_results.json
+  sample_budget_curve. A2.
+- Description-redacted procedural comparison: R/finite_results.json
+  historical_aggregate/historical_runs/historical_provenance. This is a different
+  interface/budget from historical H2. A2.
+- Full action/context answer-set risk: R/finite_answer_risk.json primary/budgets,
+  derived from those same immutable controlled runs; retain its separate
+  candidate_risk label. Derivation A4, not a new experiment.
+- tab:llm-revision and fig:llm-revision: R/llm_fresh_reanalysis.json
+  rows/heldout_predictions/fit_records; input bindings in
+  E/llm_fresh_features.npz.json and E/llm_fresh_reanalysis_record.json.
+  R/llm_reanalysis.json is a separate old-cache comparison, not the primary A3.
+
+Replot exports full-precision table inputs, not regenerated LaTeX tables.
+The fixed-decoder table uses the per-network selection above, not only the
+primary selected-decoder summary. The complete-answer derivation/result
+are not frozen by this fix's snapshot; their own source_sha256 identifies inputs.
+
+Readout comparison added on 15 November 2026:
+- tab:readout-retention and tab:readout-errors: experiments/readout_conflict_20261114/
+  results/confirmation/summary.json, filtered by condition, budget and method.
+  The first table uses components original/calibrated/increment/conflict and
+  stratified tree conflict. The second uses components conflict and stratified
+  tree conflict. Values are percentages, rounded to two decimals.
+- Paired intervals and win/tie/loss counts: verification.json comparisons;
+  round-level scores: confirmation_metrics.csv. Average four rounds within
+  each seed before bootstrapping the 48 seeds.
+- Raw records, queries, fitted rules and memories: results/<phase>/family_*.json;
+  predictions and evaluator arrays: matching .npz files. These are small finite
+  prediction arrays, not model weights or Qwen hidden-state features.
+- Code and data are in the same repository. Earlier failed filter
+  candidates and their original results are retained in their own directories.
+
+python -B -m causal_sandbox.readout_conflict_followup --phase development
+python -B -m causal_sandbox.readout_conflict_followup --phase confirmation
+python -B experiments/readout_conflict_20261114/analyze.py
+python -B experiments/readout_increment_20261114/verify_development.py
+
+The first two commands check and reuse source-bound saved runs when present.
+Readout acquisition also needs the locks and manifest included in the
+repository. The listed commands
+use the archived records when present. New acquisition requires a separate
+working copy with the specified locks; development outputs must reproduce
+the frozen summaries before confirmation proceeds.
+The analysis command independently rescores saved predictions and reconstructs
+filter decisions from observed states; it does not refit every learner.
+The filter was refined using sixteen development seeds after an increment-only
+candidate failed. Selection was frozen before the 48 confirmation seeds.
+The independently tuned tree and shared-filter tree select the same setting
+and are not two independent confirmations.
+
+3. Historical rerun command matrix
+-----------------------------------
+
+Commands below reconstruct protocols from saved metadata plus inspected source.
+They write NEW files under reproduction-output/, not H or R. They were inspected,
+not executed during lightweight tests. Neural commands fit decoders or extract
+activations. Exact historical trajectories/scores are not promised.
+
+H1. Recorded world/eight agents, 100 steps, 5 seeds, sensor suffix:
+python -B -m causal_sandbox observation-sweep --worlds panel-complex-noisy-hidden --agents random passive-correlation reward-rl causal-core causal-core-observation-adapter-v2 causal-core-persistent-latent-context-adapter causal-core-control-experiment-planner causal-core-context-search-planner --steps-list 100 --seeds 5 --sensor-suffix _sensor --save-json reproduction-output/historical_coarse.json
+
+H2. Recorded settings, which differ from current CLI defaults. Saved metric rows
+do not include the shared transition trajectories required for exact replay:
+python -B -m causal_sandbox matched-mechanism-baselines --families 8 --seeds 2 --steps 120 --mechanisms 3 --visible 4 --readouts 4 --noise 0.02 --neural-epochs 24 --save-json reproduction-output/historical_matched.json
+
+H3. Recorded 8 families, 2 seeds, 96 train/test states, 160 hidden steps, 16 epochs.
+The available ranking_baseline.py returns L6 repair names/keys (l6/readout_l6),
+whereas the saved file uses renamed_adaptation/semantic_readout_adaptation.
+The historical evaluator/driver edit history is unavailable. This is a
+current-driver protocol rerun, not a claim that relabeling keys restores it:
+python -B -m causal_sandbox ranking-loss-baseline --families 8 --seeds 2 --train-states 96 --test-states 96 --hidden-steps 160 --epochs 16 --save-json reproduction-output/historical_ranking_current_driver.json
+
+H4. Noise .02 is supported by the matching H5 payload, not a stored H4 field:
+python -B -m causal_sandbox continuous-poc --seeds 20 --random-trials 160 --regression-trials 240 --paired-samples 8 --noise 0.02 --save-json reproduction-output/historical_continuous.json
+
+H5. No dedicated CLI exposes this full grid; call stress_suite.py:1155-1189:
+python -B -c "from causal_sandbox.stress_suite import _run_continuous_noise_sweep, save_icml_stress_suite; save_icml_stress_suite({'suite':'continuous-noise-sweep','continuous_noise_sweep':_run_continuous_noise_sweep(seeds=20,noise_levels=(0.02,0.05,0.10,0.15))},'reproduction-output/historical_noise.json')"
+
+H6. Supply the local MT30 5M checkpoint at the path below; required SHA-256:
+f3c6909e3282f115ce57b2ab29a88e654b4728d819d2c93a4ca079bad63b1455
+Three seeds per task reuse ONE trained MT30 network. Ridge alpha=10, global
+residual alpha=5, selective loss ratio=0.5 are driver choices, not evidence of
+how they were originally selected. Original physics/query arrays and the
+historical numerical-library/device environment are unavailable.
+python -B -m causal_sandbox.tdmpc2_retention --tdmpc2-root external/tdmpc2 --checkpoint external/tdmpc2/checkpoints/mt30-5M.pt --tasks cheetah-run walker-walk reacher-easy --seeds 3 --source-train-queries 900 --source-test-queries 240 --target-test-queries 240 --adaptation-states-per-actuator 5 --pulse 0.25 --output-json reproduction-output/historical_tdmpc2.json --figure-dir reproduction-output/historical_tdmpc2_figures
+
+H7. Set PowerShell environment variable QWEN_SNAPSHOT to a local directory for
+snapshot a09a35458c702b33eeacc393d103063234e8bc28. Weights and original hidden
+arrays are not bundled. Recorded training mixes source-clean/renamed-shift/
+opaque-readout families 1-12 (504 examples), with test families 101-106 (360).
+Fresh extraction/refitting need not reproduce original floating scores.
+python -B -m causal_sandbox.llm_hidden_retention --model "$env:QWEN_SNAPSHOT" --train-families 12 --train-family-start 1 --test-families 6 --test-family-start 101 --repeats 2 --layers 0 7 14 21 28 --batch-size 8 --max-length 1536 --feature-cache reproduction-output/historical_qwen_features.npz --output-json reproduction-output/historical_qwen.json --figure-dir reproduction-output/historical_qwen_figures
+
+H8. Records save the model NAME, six variants, 3 seeds and 100 steps, but not
+model revision, temperature, max_new_tokens or precision/backend. The following
+explicitly uses CURRENT driver defaults 0.0/96, not established historical
+values. Exact generation replay is unsupported; saved-record replot is supported.
+python -B -m causal_sandbox llm-pilot --worlds panel-complex-noisy-hidden --variants llm-vanilla llm-causal-prompt llm-context-search-gated llm-control-planner-gated causal-core-context-search-planner causal-core-control-experiment-planner --model Qwen/Qwen2.5-7B-Instruct --steps 100 --seeds 3 --temperature 0.0 --max-new-tokens 96 --local-files-only --save-json reproduction-output/historical_proposal_current_defaults.json
+
+H9. Recorded families 1-4, ONLY rollout seed 1, steps 80/160; cap tuples
+(candidate,variable,setup): small=(8,2,8), default=(32,4,20), wide=(64,5,32).
+Mechanism count, visible count, readout count and noise are NOT recorded; no
+trajectories are included. No exact rerun command is asserted. Available API:
+stress_suite._run_candidate_budget_sensitivity(families=4,seeds=1,
+steps_list=(80,160),mechanisms=...,visible=...,readouts=...,noise=...).
+Recover missing provenance before supplying values; do not substitute current
+icml-stress-suite defaults or assume two seeds from other comparisons.
+
+4. Historical Causal Core settings and selection provenance
+------------------------------------------------------------
+
+These are exact constructor/rule values in inspected hash-pinned source,
+not per-run configuration dumps. Earlier exploration, validation tuning,
+manual choices and mutable-attribute overrides remain unverified.
+
+Base core: min_effect_observations=1, min_action_observations=1,
+min_effect_lift=0.0 (agents.py:392-402; causal_core.py:29-38).
+Temporal/portable/diagnostic variants inherit these and max_delay_steps=2
+(agents.py:734-736,1071-1077,1193-1194).
+
+V2/persistent/control/context-search inner core: effect/action minima=1/3,
+lift=.10 (agents.py:1447-1453,1738-1745; llm.py:417-431 maps Qwen gated planners).
+Readout filter: observations=40, accuracy=.90, refresh=4,
+allow_identity_from_protected=True, max_candidate_sources=8
+(observation.py:136-148,354-376).
+V2 adapter: total/action/effect minima=40/4/2, lift=.08,
+strong_action_rate=.45, value_consistency=0.0 (observation.py:354-369).
+Persistent/control/context adapters: same minima, lift=.14,
+strong_action_rate=.55, value_consistency=.78 (observation.py:616-630).
+Latent checks: lift_floor=.04, min_action_rate=.15, max_background_rate=.25;
+eligible attempts=8, min successes/failures=2/2, success-rate range [.20,.80],
+max_observed_gate_accuracy=.88, eligible-effect attempts/rate=3/.70;
+belief window=8, persistent evidence=8, probe uncertainty=.70
+(observation.py:627-639,839-842,941-944).
+Planner refresh/pre-gate cap=4/40 (agents.py:1827-1828); context-search
+candidate/variable/setup caps=32/4/20 (agents.py:2742-2744). H9 overrides these.
+Setup/target-reset search depth=3/1 (agents.py:3122-3158).
+
+Matched baseline extraction instead explicitly uses evaluation-truth F1 oracle
+selection: grid .03/.05/.08/.10/.15/.20/.30; ties favor fewer false edges then
+smaller threshold (stress_suite.py:84-93,1279-1290). Readout-oracle variants
+additionally receive readout identities. Core saved rows have threshold=null;
+this does not mean its internal gates are threshold-free or independently tuned.
+
+Continuous rules: ignore |action|<.2, random-write cutoff |change|>.12;
+global correlation cutoff=.35; metric core pulses +/-.8, median-response
+cutoff=.18, known pressure_sensor excluded (continuous.py:192-290).
+These are implementation choices with unverified earlier selection history.
+
+Qwen calibration, in BOTH P/llm_hidden_retention.py and its byte-identical
+causal_sandbox copy:
+- :482-484 forms the Yes-logit minus No-logit scalar.
+- :599-602 defines example.split=='train'.
+- :666 reshapes the margin to one feature.
+- :667 constructs LogisticRegression(class_weight='balanced',random_state=0),
+  leaving library defaults such as C=1 and intercept enabled.
+- :668 fits ONLY margin[train],labels[train].
+- :669 obtains positive-class predict_proba; :670-672 accepts probability>=.5.
+This is learned logistic calibration, not raw-margin>=0 or evaluation-F1
+threshold selection. No separate calibration validation grid appears here;
+the earlier choice of calibration family is unknown.
+Other probes: train-fitted StandardScaler + balanced logistic regression,
+max_iter=2000,random_state=0, probability>=.5 (:605-622); RBF SVC
+C=2,gamma=scale,class_weight=balanced, decision>=0 (:645-651). MLP has
+train-only 15% internal early-stopping validation (:624-641). Paired/gated
+evidence rules use discrete first-response/readout checks (:124-163).
+
+5. Added experiments and saved-record rescoring
+------------------------------------------------------------
+
+A1. Fifteen independently trained official single-task TD-MPC2 checkpoints:
+five tasks x training seeds 1/2/3. Pulse reruns reuse the same networks, not
+45 independent agents. Release:
+nicklashansen/tdmpc2@8fb2a82efb3bae96941da440128fe1332e4394fd.
+The driver can download weights; offline runs need them preinstalled under
+--checkpoints. TD-MPC2 weights are not fine-tuned; response decoders are fitted.
+
+python -B -m causal_sandbox.world_model_probes --output reproduction-output/data/controlled/results/tdmpc2/default --device cuda:0 --pulse 0.25
+python -B -m causal_sandbox.world_model_probes --output reproduction-output/data/controlled/results/tdmpc2/pulse010 --device cuda:0 --pulse 0.10
+python -B -m causal_sandbox.world_model_probes --output reproduction-output/data/controlled/results/tdmpc2/pulse040 --device cuda:0 --pulse 0.40
+
+Aggregate/replot NEW runs by redirecting the existing summarizer ROOT in memory:
+python -B -c "import importlib.util; from pathlib import Path; s=importlib.util.spec_from_file_location('summary','analysis/tools/summarize_tdmpc2.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); m.ROOT=Path('reproduction-output').resolve(); m.main()"
+
+Primary decoder minimizes source-validation MSE over ridge20/ridge100/neural256.
+Primary ratio=.5, global alpha=5; budget grid=1/3/5/10/20, ratio grid
+.45/.50/.60/.75/.90, alpha grid .1/1/5/20/100. No target-test optimum is selected.
+Fixed neural initialization=1987, state/query RNG=2227 and environment seed=112
+are DRIVER settings (world_model_probes.py:212-234), not per-run stored fields.
+The inherited neural minibatch generator also uses 1987 (tdmpc2_retention.py:96).
+training_seed identifies the pretrained checkpoint, not these driver seeds.
+Budget b uses b*d_a pairs and 2*b*d_a branches. Physical-control steps are
+DERIVED as twice the recorded wrapper-step count from the action repeat, not
+a claimed stored per-run field. State collection/evaluation are separate costs.
+Per-run files retain the partition-check flag, not individual physics-state
+hashes or query response arrays; those states require a fresh protocol run.
+
+A2. Typed writer, omission stress, four budgets and description-redacted study:
+python reproduce.py finite --output reproduction-output/finite
+The checked protocol specifies seeds, primary 4096 pairs/cell, budgets
+64/256/1024/4096, effect threshold .2, familywise alpha .05 and formula-emulation
+cutoff .9. Its recorded selection statement is not evidence about old H1-H9
+tuning. Saved source_sha256/runtime fields identify the corresponding inputs.
+
+A3. Fresh Qwen extraction and source-only/mixed/target-refitted decoders:
+python -B -m causal_sandbox.llm_state_probes --fresh --gpu 1 --output-root reproduction-output/qwen
+Preinstall snapshot a09a35458c702b33eeacc393d103063234e8bc28 in the local
+Hugging Face cache. Fresh extraction binds prompt/chat/token hashes; old feature
+caches are optional. Linear C=1; RBF C=2/gamma=scale; target-family prefixes
+1/3/6/12; 20,000 held-out-family resamples conditional on fitted models.
+Neural weights and feature arrays are not redistributed.
+
+A4. Complete-answer derivation, no new data acquisition:
+python reproduce.py answer-risk
+Reads existing finite_results.json/finite_budget_curve.json; writes
+finite_answer_risk.json, preserving inputs. It distinguishes complete cellwise
+answer-risk from candidate-risk. It preserves all original experimental records.
+
+A5. Sequential actuator-map retention (Section 5.4 and Appendix B.4):
+The sequential records, protocol and confirmation_lock.json are under
+experiments/tdmpc2_sequential_20261116/. The lock pins the protocol, update
+code, development scores and selected settings. Raw records include all
+15 networks, all candidates and all 48 schedule/noise/budget cells.
+
+python -B -m causal_sandbox.analyze_tdmpc2_sequential
+python -B -m causal_sandbox.plot_tdmpc2_sequential
+python -B -m pytest tests/test_tdmpc2_sequential_rules.py tests/test_tdmpc2_sequential_metrics.py tests/test_tdmpc2_score_rules.py tests/test_world_model_probes.py
+
+The first command independently reconstructs the saved confirmation decisions
+and metrics. The second renders the four-panel figure. These two commands
+do not load TD-MPC2 weights. The numerical table values are retained in
+data/controlled/experiments/sequential_table_values.json; document
+formatting and manuscript-integration scripts are not required for these analyses.
+
+Acquisition commands (require official checkpoints and simulator):
+python -B -m causal_sandbox.tdmpc2_sequential --phase development --device cuda:0
+python -B -m causal_sandbox.tdmpc2_sequential --phase confirmation --device cuda:0
+python -B -m causal_sandbox.verify_tdmpc2_sequential_physics
+
+Existing results are source/hash-checked and reused. A fresh acquisition uses
+a separate project root without the sequential result archive, with official
+weights under external/tdmpc2/checkpoints/single_task. Development
+must complete and lock its selected settings before confirmation. Seeds 1
+are development; seeds 2 and 3 are confirmation, across the five fixed tasks.
+These are previously used trained checkpoints with fresh study records.
+The primary endpoint is response NRMSE at budget 3; budgets 1 and 5 are
+secondary. Paired intervals resample checkpoints within fixed tasks.
+
+6. Repository layout
+------------------------------------------------
+
+Clone the repository, enter its root directory, and start with README.md:
+
+python reproduce.py verify
+python reproduce.py validate
+python reproduce.py map
+python reproduce.py figures --output ../reproduced_figures
+python reproduce.py readout-analysis
+python reproduce.py sequential-analysis
+python reproduce.py sequential-figure
+python reproduce.py tests
+
+Analysis helpers are under analysis/tools/ and historical plotting scripts
+are under analysis/historical/. Original data records and locks are unchanged.
+Experiment modules now use descriptive names. manifest.json records
+the exact renaming edits, original/current source hashes and relocated paths.
+Saved-record checks verify this correspondence before accepting old hashes.
+It also lists every distributed file except itself,
+along with its checksum. It records measured dependency versions
+and pinned model releases, not a reconstructed historical environment.
+
+Code includes the required experiment drivers, imported helpers, focused tests,
+third-party TD-MPC2 source and license, protocols and plotting scripts.
+Data includes source snapshots, selection locks, this guide, and numerical records for the
+reported studies, including failed filter candidates, baseline wins and
+ablation results. Unrelated follow-up drivers, manuscript editing/checking
+tools, model weights, feature arrays, local environments and private reviews
+are excluded. Historical README files remain byte-identical snapshot records;
+this document gives the current repository paths.
+
+7. Unresolved provenance
+-------------------------
+
+Exact historical tuning and software/device environment are unverified.
+H2 lacks shared trajectories; H3 has an unresolved saved/current evaluator-schema
+difference; H6 lacks original physics/query arrays; H7 lacks original hidden
+arrays; H8 lacks model revision/decoding metadata; H9 lacks four world-generator
+settings and trajectories. Saved seeds do not fill these gaps. The added A3
+prompt bindings improve fresh-analysis provenance, not historical H7/H8.

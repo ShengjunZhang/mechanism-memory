@@ -1,0 +1,404 @@
+{
+  "status": "development_retention_guard_failed",
+  "confirmation_run": false,
+  "verification_scope": "Independent rescoring of saved predictions and formula increments, not full retraining.",
+  "rows_checked": 7680,
+  "checks": [
+    {
+      "family": 11001,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 677,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11002,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 592,
+      "readout_rule_checks": 55,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11003,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 592,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11004,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 606,
+      "readout_rule_checks": 56,
+      "increment_checks": 48,
+      "copy_checks": 48
+    },
+    {
+      "family": 11005,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 604,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11006,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 634,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11007,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 611,
+      "readout_rule_checks": 49,
+      "increment_checks": 41,
+      "copy_checks": 48
+    },
+    {
+      "family": 11008,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 759,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11009,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 611,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11010,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 710,
+      "readout_rule_checks": 47,
+      "increment_checks": 39,
+      "copy_checks": 48
+    },
+    {
+      "family": 11011,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 626,
+      "readout_rule_checks": 50,
+      "increment_checks": 42,
+      "copy_checks": 48
+    },
+    {
+      "family": 11012,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 550,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11013,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 583,
+      "readout_rule_checks": 51,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11014,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 576,
+      "readout_rule_checks": 48,
+      "increment_checks": 40,
+      "copy_checks": 48
+    },
+    {
+      "family": 11015,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 641,
+      "readout_rule_checks": 52,
+      "increment_checks": 44,
+      "copy_checks": 48
+    },
+    {
+      "family": 11016,
+      "phase": "development",
+      "rows": 480,
+      "formula_checks": 0,
+      "locality_checks": 545,
+      "readout_rule_checks": 49,
+      "increment_checks": 41,
+      "copy_checks": 48
+    }
+  ],
+  "selection": {
+    "increment_index": 0,
+    "development_guard_pass": false,
+    "tuned_tree_filter": "gain0",
+    "candidates": [
+      {
+        "index": 0,
+        "margin": 0.05,
+        "guards": [
+          {
+            "name": "or_4_physical",
+            "loss": 0.021453373015873023,
+            "limit": 0.005,
+            "pass": false
+          },
+          {
+            "name": "identity_4_physical",
+            "loss": -0.011600238162738141,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_direct",
+            "loss": 0.0,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_fpr",
+            "loss": 0.0,
+            "limit": 0.02,
+            "pass": true
+          },
+          {
+            "name": "or_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "identity_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_direct",
+            "loss": 0.0,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_fpr",
+            "loss": 0.0,
+            "limit": 0.02,
+            "pass": true
+          }
+        ],
+        "guard_pass": false,
+        "guard_excess": 0.016453373015873022,
+        "objective": 0.9561558140603975
+      },
+      {
+        "index": 1,
+        "margin": 0.1,
+        "guards": [
+          {
+            "name": "or_4_physical",
+            "loss": 0.021453373015873023,
+            "limit": 0.005,
+            "pass": false
+          },
+          {
+            "name": "identity_4_physical",
+            "loss": -0.011600238162738141,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_direct",
+            "loss": 0.002071048141665588,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_fpr",
+            "loss": 0.02435980902777778,
+            "limit": 0.02,
+            "pass": false
+          },
+          {
+            "name": "or_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "identity_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_direct",
+            "loss": 0.0005341483353150656,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_fpr",
+            "loss": 0.006239149305555556,
+            "limit": 0.02,
+            "pass": true
+          }
+        ],
+        "guard_pass": false,
+        "guard_excess": 0.0208131820436508,
+        "objective": 0.9511492917293668
+      },
+      {
+        "index": 2,
+        "margin": 0.15,
+        "guards": [
+          {
+            "name": "or_4_physical",
+            "loss": 0.021453373015873023,
+            "limit": 0.005,
+            "pass": false
+          },
+          {
+            "name": "identity_4_physical",
+            "loss": -0.011600238162738141,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_direct",
+            "loss": 0.008858759818171968,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_4_fpr",
+            "loss": 0.10411241319444445,
+            "limit": 0.02,
+            "pass": false
+          },
+          {
+            "name": "or_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "identity_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_physical",
+            "loss": 0.0,
+            "limit": 0.005,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_direct",
+            "loss": 0.005271538815578625,
+            "limit": 0.01,
+            "pass": true
+          },
+          {
+            "name": "noise10_8_fpr",
+            "loss": 0.06184895833333333,
+            "limit": 0.02,
+            "pass": false
+          }
+        ],
+        "guard_pass": false,
+        "guard_excess": 0.1424147445436508,
+        "objective": 0.8939374032343419
+      }
+    ],
+    "tree_candidates": [
+      {
+        "filter": "original",
+        "objective": 0.6957378675185989
+      },
+      {
+        "filter": "calibrated",
+        "objective": 0.8698134726127664
+      },
+      {
+        "filter": "gain0",
+        "objective": 0.8947993682328068
+      },
+      {
+        "filter": "gain1",
+        "objective": 0.8913531947986661
+      },
+      {
+        "filter": "gain2",
+        "objective": 0.8447374129905144
+      }
+    ]
+  }
+}

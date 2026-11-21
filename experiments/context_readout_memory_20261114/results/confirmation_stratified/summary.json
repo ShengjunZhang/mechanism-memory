@@ -1,0 +1,142 @@
+[
+  {
+    "method": "stratified change + shared filter",
+    "direct_ba": 0.9944776766743868,
+    "families": [
+      {
+        "family": 8101,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8102,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8103,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8104,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8105,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8106,
+        "direct_ba": 0.9151866548272956
+      },
+      {
+        "family": 8107,
+        "direct_ba": 0.9995546318289786
+      },
+      {
+        "family": 8108,
+        "direct_ba": 0.9984524991551975
+      },
+      {
+        "family": 8109,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8110,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8111,
+        "direct_ba": 0.9984490409787155
+      },
+      {
+        "family": 8112,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8113,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8114,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8115,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 8116,
+        "direct_ba": 1.0
+      }
+    ]
+  },
+  {
+    "method": "stratified next-state + shared filter",
+    "direct_ba": 0.9075171159646643,
+    "families": [
+      {
+        "family": 8101,
+        "direct_ba": 0.9023250843321342
+      },
+      {
+        "family": 8102,
+        "direct_ba": 0.90644559843601
+      },
+      {
+        "family": 8103,
+        "direct_ba": 0.9098563816500979
+      },
+      {
+        "family": 8104,
+        "direct_ba": 0.902553601221728
+      },
+      {
+        "family": 8105,
+        "direct_ba": 0.908490250494998
+      },
+      {
+        "family": 8106,
+        "direct_ba": 0.9018989736984317
+      },
+      {
+        "family": 8107,
+        "direct_ba": 0.9115993424252223
+      },
+      {
+        "family": 8108,
+        "direct_ba": 0.9107573134020278
+      },
+      {
+        "family": 8109,
+        "direct_ba": 0.9118965255698329
+      },
+      {
+        "family": 8110,
+        "direct_ba": 0.9052650624859533
+      },
+      {
+        "family": 8111,
+        "direct_ba": 0.9065998633825041
+      },
+      {
+        "family": 8112,
+        "direct_ba": 0.911534647152807
+      },
+      {
+        "family": 8113,
+        "direct_ba": 0.9043113838160677
+      },
+      {
+        "family": 8114,
+        "direct_ba": 0.9093664063830514
+      },
+      {
+        "family": 8115,
+        "direct_ba": 0.9068439005716085
+      },
+      {
+        "family": 8116,
+        "direct_ba": 0.9105295204121543
+      }
+    ]
+  }
+]

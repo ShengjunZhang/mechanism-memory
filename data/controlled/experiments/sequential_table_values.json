@@ -1,0 +1,82 @@
+[
+  {
+    "method": "Selective memory",
+    "nrmse": 0.4522647482303045,
+    "nrmse_ci95": [
+      0.43295843939030665,
+      0.4715710570703024
+    ],
+    "changed_accuracy": 0.9552083333333334,
+    "stable_error": 0.006606737446581197
+  },
+  {
+    "method": "Markov calibration",
+    "nrmse": 0.45757679645529914,
+    "nrmse_ci95": [
+      0.4399807271076964,
+      0.4746281411790344
+    ],
+    "changed_accuracy": 0.8829861111111109,
+    "stable_error": 0.006686698717948719
+  },
+  {
+    "method": "Discounted calibration",
+    "nrmse": 0.45899337249009725,
+    "nrmse_ci95": [
+      0.44021828322242057,
+      0.4784662017508058
+    ],
+    "changed_accuracy": 0.9069444444444443,
+    "stable_error": 0.005667067307692309
+  },
+  {
+    "method": "Roundwise calibration",
+    "nrmse": 0.4591315899851585,
+    "nrmse_ci95": [
+      0.4407101100337819,
+      0.4775530699365351
+    ],
+    "changed_accuracy": 0.9831018518518517,
+    "stable_error": 0.017337239583333334
+  },
+  {
+    "method": "Reset memory",
+    "nrmse": 0.45957854452257896,
+    "nrmse_ci95": [
+      0.44074081122487146,
+      0.4784162778202866
+    ],
+    "changed_accuracy": 0.9636574074074072,
+    "stable_error": 0.01486929086538461
+  },
+  {
+    "method": "Default gate",
+    "nrmse": 0.501465711888293,
+    "nrmse_ci95": [
+      0.47979652993712485,
+      0.5231348938394615
+    ],
+    "changed_accuracy": 0.7565972222222221,
+    "stable_error": 0.03642661591880343
+  },
+  {
+    "method": "Frozen map",
+    "nrmse": 0.848043904027632,
+    "nrmse_ci95": [
+      0.8297126193810144,
+      0.8666059455232833
+    ],
+    "changed_accuracy": 0.3018518518518519,
+    "stable_error": 0.21813568376068374
+  },
+  {
+    "method": "True map",
+    "nrmse": 0.44107930019992836,
+    "nrmse_ci95": [
+      0.4213137968245049,
+      0.45989224270676815
+    ],
+    "changed_accuracy": 1.0,
+    "stable_error": 0.0
+  }
+]

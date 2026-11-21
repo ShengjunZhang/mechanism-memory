@@ -1,0 +1,356 @@
+{
+  "increment_index": 0,
+  "development_guard_pass": true,
+  "tuned_tree_filter": "conflict0",
+  "candidates": [
+    {
+      "index": 0,
+      "margin": 0.05,
+      "guards": [
+        {
+          "name": "or_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_loss",
+          "loss": -0.011600238162738141,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct_loss",
+          "loss": 0.0,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr_increase",
+          "loss": 0.0,
+          "limit": 0.02,
+          "pass": true
+        },
+        {
+          "name": "or_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct_loss",
+          "loss": 0.0,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr_increase",
+          "loss": 0.0,
+          "limit": 0.02,
+          "pass": true
+        }
+      ],
+      "guard_pass": true,
+      "guard_excess": 0.0,
+      "objective": 0.961419634005975
+    },
+    {
+      "index": 1,
+      "margin": 0.1,
+      "guards": [
+        {
+          "name": "or_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_loss",
+          "loss": -0.011600238162738141,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct_loss",
+          "loss": 0.0019879855309155037,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr_increase",
+          "loss": 0.02338324652777778,
+          "limit": 0.02,
+          "pass": false
+        },
+        {
+          "name": "or_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct_loss",
+          "loss": 0.0005341483353150656,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr_increase",
+          "loss": 0.006239149305555556,
+          "limit": 0.02,
+          "pass": true
+        }
+      ],
+      "guard_pass": false,
+      "guard_excess": 0.0033832465277777793,
+      "objective": 0.9547386976671374
+    },
+    {
+      "index": 2,
+      "margin": 0.15,
+      "guards": [
+        {
+          "name": "or_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_loss",
+          "loss": -0.011600238162738141,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct_loss",
+          "loss": 0.008858759818171968,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr_increase",
+          "loss": 0.10411241319444445,
+          "limit": 0.02,
+          "pass": false
+        },
+        {
+          "name": "or_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "or_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_loss",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical_suppression",
+          "loss": 0.0,
+          "limit": 0.0,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct_loss",
+          "loss": 0.004915795172763637,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr_increase",
+          "loss": 0.057671440972222224,
+          "limit": 0.02,
+          "pass": false
+        }
+      ],
+      "guard_pass": false,
+      "guard_excess": 0.12178385416666666,
+      "objective": 0.9016904827647654
+    }
+  ],
+  "tree_candidates": [
+    {
+      "filter": "original",
+      "objective": 0.6957378675185989
+    },
+    {
+      "filter": "calibrated",
+      "objective": 0.8698134726127664
+    },
+    {
+      "filter": "gain0",
+      "objective": 0.8947993682328068
+    },
+    {
+      "filter": "gain1",
+      "objective": 0.8914193372479671
+    },
+    {
+      "filter": "gain2",
+      "objective": 0.8481011282682922
+    },
+    {
+      "filter": "conflict0",
+      "objective": 0.8978907744145547
+    },
+    {
+      "filter": "conflict1",
+      "objective": 0.894079788414966
+    },
+    {
+      "filter": "conflict2",
+      "objective": 0.850761579435291
+    }
+  ]
+}

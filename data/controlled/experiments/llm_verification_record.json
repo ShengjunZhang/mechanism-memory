@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-12T02:05:47.626850+00:00",
+  "focused_tests_run": 12,
+  "test_failures": 0,
+  "test_errors": 0,
+  "fresh_vector_replay_identical_metrics": true,
+  "fresh_vector_replay_identical_paired_intervals": true,
+  "fresh_vector_replay_identical_predictions_scores": true,
+  "legacy_artifacts_preserved_sha256": {
+    "jmlr_revision_20261112\\results\\llm_reanalysis.json": "39a637363dbb48c214f0cc6f59051590e6818b2c9150f6911114e022c01839af",
+    "jmlr_revision_20261112\\results\\llm_reanalysis_status.txt": "4b4c5ed68be1dc18502424f66fc25d6c2caddaa10572f8aadcd8b442e31f5536",
+    "jmlr_revision_20261112\\experiments\\llm_reanalysis_manifest.json": "67164f16b7834fd0ec09bf04f9837c12629106c1dd7737bad969bf69380b347b",
+    "jmlr_revision_20261112\\figures\\llm_reanalysis.png": "9377c4819a32827a6dfd2150319cdf48356bedb6ae0eeb51169bc1a3224bc1eb",
+    "jmlr_revision_20261112\\figures\\llm_reanalysis.pdf": "a661f8dd0d506fef044ffda2ae05333d4fd215a104aad4dabca11b323153a352"
+  },
+  "implementation_sha256": "ba0e8d8d1806892f29d5ea82334b7c8be2945e3c195449390cd50fc0b3cae392",
+  "tests_sha256": "edbe95436234600e5e5679a0abc6948ae200c86f25da2914e3a21fd45a354e9b",
+  "figure_visual_check": "PNG inspected: nonblank, readable labels, no overlap",
+  "extractor_gpu_released": true
+}

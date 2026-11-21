@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-14",
+  "protocol_sha256": "cd9f64c117f03068cd4ba16b7509954a1d9e46f7708b4bf33bcd829ab8192bce",
+  "source_hashes": {
+    "core.py": "e9fd951dffcecdc9914b597a54df5426e8c66383e292a123069614f3ed694537",
+    "causal_core.py": "c92ada5f156731b3262354d1002af60d7b77262bab12ad05e22b94a6ff4fc49a",
+    "memory.py": "6ed0a43fb382047d4a84bbffffe512d924643de92415a54bab9579796fcaa2a6",
+    "observation.py": "367d1f6f3831d2d0397f08e6d6b4bca301686042e16b03db70c547ab91c73c6d",
+    "revision_memory.py": "4d34856e0af232580c5405488725937f60522e1a63f298e1c94ff84a35d5a0d4",
+    "context_readout_memory_followup.py": "75fc05e8c43c68ad9ae1c4a51fffb2a9f2e65dbd4c890b80485951b2a6f28555"
+  },
+  "stratified_controls_sha256": "b982e244a36a6af1c53de5dafd49ce2b2b6d5f2f20f8540f450a844609c7a030",
+  "baseline_amendment_sha256": "e698310cd66eb8fd26a9e95f7ba88b54d0a428a9deb76d207ad6d33f5c757b25",
+  "development_summary_sha256": "dac300c80bffdc0840f038fe0768a59aa424a9e4e63f5fecec21fd2394b02362",
+  "stratified_development_summary_sha256": "5859ca7fceb503f637b1f49f4a741491208c8a2ba6c329ecc845abe54a922769",
+  "settings": {
+    "full-history tree": 1,
+    "context replay tree": 1,
+    "context replay + shared filter": 1,
+    "context replay next-state + shared filter": 2
+  },
+  "decision": "Retain both added stratified controls. Run all 16 confirmation families and all scope controls with the existing component composition unchanged. No checkpoint or task family from development is included in confirmation."
+}

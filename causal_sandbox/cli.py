@@ -778,7 +778,7 @@ def build_parser() -> argparse.ArgumentParser:
     stress_parser.add_argument("--neural-epochs", type=int, default=24)
     stress_parser.add_argument(
         "--save-json",
-        default="tmp/icml_stress_suite.json",
+        default="tmp/stress_suite.json",
     )
 
     matched_parser = subparsers.add_parser(

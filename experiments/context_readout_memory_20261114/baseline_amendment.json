@@ -1,0 +1,8 @@
+{
+  "date": "2026-11-14",
+  "stage": "After four development families; before any confirmation family",
+  "reason": "The component memory conditions on exact action-context keys, while the original replay tree is globally fitted. Add explicitly stratified trees to match that factorization.",
+  "changes": "Two additional fixed, unlimited-depth tree controls, one predicting changes and one next-state values. Each action-context key has its own tree trained on exactly the latest supplied records for that key. Both receive the same learned readout filter.",
+  "selection": "No hyperparameter tuning for the added controls; both retained. Primary endpoint and original primary comparator unchanged. Report comparisons against these stronger controls prominently.",
+  "core_change": "None. Original development records and driver are retained unchanged."
+}

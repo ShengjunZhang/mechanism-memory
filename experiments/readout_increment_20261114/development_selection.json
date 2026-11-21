@@ -1,0 +1,236 @@
+{
+  "increment_index": 0,
+  "development_guard_pass": false,
+  "tuned_tree_filter": "gain0",
+  "candidates": [
+    {
+      "index": 0,
+      "margin": 0.05,
+      "guards": [
+        {
+          "name": "or_4_physical",
+          "loss": 0.021453373015873023,
+          "limit": 0.005,
+          "pass": false
+        },
+        {
+          "name": "identity_4_physical",
+          "loss": -0.011600238162738141,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct",
+          "loss": 0.0,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr",
+          "loss": 0.0,
+          "limit": 0.02,
+          "pass": true
+        },
+        {
+          "name": "or_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct",
+          "loss": 0.0,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr",
+          "loss": 0.0,
+          "limit": 0.02,
+          "pass": true
+        }
+      ],
+      "guard_pass": false,
+      "guard_excess": 0.016453373015873022,
+      "objective": 0.9561558140603975
+    },
+    {
+      "index": 1,
+      "margin": 0.1,
+      "guards": [
+        {
+          "name": "or_4_physical",
+          "loss": 0.021453373015873023,
+          "limit": 0.005,
+          "pass": false
+        },
+        {
+          "name": "identity_4_physical",
+          "loss": -0.011600238162738141,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct",
+          "loss": 0.002071048141665588,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr",
+          "loss": 0.02435980902777778,
+          "limit": 0.02,
+          "pass": false
+        },
+        {
+          "name": "or_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct",
+          "loss": 0.0005341483353150656,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr",
+          "loss": 0.006239149305555556,
+          "limit": 0.02,
+          "pass": true
+        }
+      ],
+      "guard_pass": false,
+      "guard_excess": 0.0208131820436508,
+      "objective": 0.9511492917293668
+    },
+    {
+      "index": 2,
+      "margin": 0.15,
+      "guards": [
+        {
+          "name": "or_4_physical",
+          "loss": 0.021453373015873023,
+          "limit": 0.005,
+          "pass": false
+        },
+        {
+          "name": "identity_4_physical",
+          "loss": -0.011600238162738141,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_direct",
+          "loss": 0.008858759818171968,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_4_fpr",
+          "loss": 0.10411241319444445,
+          "limit": 0.02,
+          "pass": false
+        },
+        {
+          "name": "or_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "identity_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_physical",
+          "loss": 0.0,
+          "limit": 0.005,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_direct",
+          "loss": 0.005271538815578625,
+          "limit": 0.01,
+          "pass": true
+        },
+        {
+          "name": "noise10_8_fpr",
+          "loss": 0.06184895833333333,
+          "limit": 0.02,
+          "pass": false
+        }
+      ],
+      "guard_pass": false,
+      "guard_excess": 0.1424147445436508,
+      "objective": 0.8939374032343419
+    }
+  ],
+  "tree_candidates": [
+    {
+      "filter": "original",
+      "objective": 0.6957378675185989
+    },
+    {
+      "filter": "calibrated",
+      "objective": 0.8698134726127664
+    },
+    {
+      "filter": "gain0",
+      "objective": 0.8947993682328068
+    },
+    {
+      "filter": "gain1",
+      "objective": 0.8913531947986661
+    },
+    {
+      "filter": "gain2",
+      "objective": 0.8447374129905144
+    }
+  ]
+}

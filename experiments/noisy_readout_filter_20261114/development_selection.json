@@ -1,0 +1,43 @@
+{
+  "filter_index": 0,
+  "relaxed_index": 1,
+  "development_guard_pass": true,
+  "filter_candidates": [
+    {
+      "index": 0,
+      "physical_ba_loss": 0.0,
+      "guard_pass": true,
+      "objective": 0.9586055171767629
+    },
+    {
+      "index": 1,
+      "physical_ba_loss": 0.0,
+      "guard_pass": true,
+      "objective": 0.8421684884211336
+    },
+    {
+      "index": 2,
+      "physical_ba_loss": 0.0,
+      "guard_pass": true,
+      "objective": 0.6920560235711066
+    }
+  ],
+  "relaxed_candidates": [
+    {
+      "index": 0,
+      "objective": 0.8445496508014803
+    },
+    {
+      "index": 1,
+      "objective": 0.9252994291259041
+    },
+    {
+      "index": 2,
+      "objective": 0.8119228261307552
+    },
+    {
+      "index": 3,
+      "objective": 0.7128701442361172
+    }
+  ]
+}
