@@ -26,3 +26,17 @@ env/
 
 .DS_Store
 Thumbs.db
+
+# Current software: data and generated outputs belong outside Git.
+/software/jmlr_*/
+/software/release_manifest.json
+/software/REPRODUCTION.txt
+/software/experiments/*/results/
+/software/experiments/*/*lock.json
+/software/experiments/*/development_selection.json
+/software/outputs/
+/software/external/tdmpc2/checkpoints/
+*.zip
+*.npz
+*.pt
+*.safetensors

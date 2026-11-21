@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "development_families": [9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108],
+  "confirmation_families": [10101, 10102, 10103, 10104, 10105, 10106, 10107, 10108, 10109, 10110, 10111, 10112, 10113, 10114, 10115, 10116, 10117, 10118, 10119, 10120, 10121, 10122, 10123, 10124],
+  "budgets_per_action_context": [4, 8],
+  "primary_budget": 8,
+  "conditions": [
+    {"name": "none", "readout": "none", "noise_probability": 0.0},
+    {"name": "or", "readout": "or", "noise_probability": 0.0},
+    {"name": "noise05", "readout": "noisy-or", "noise_probability": 0.05},
+    {"name": "noise10", "readout": "noisy-or", "noise_probability": 0.1},
+    {"name": "noise20", "readout": "noisy-or", "noise_probability": 0.2},
+    {"name": "identity", "readout": "identity", "noise_probability": 0.0}
+  ],
+  "primary_condition": "noise10",
+  "rounds": 4,
+  "query_count_per_action_context": 24,
+  "filter_grid": [
+    {"validation_floor": 0.75, "pooled_floor": 0.80},
+    {"validation_floor": 0.80, "pooled_floor": 0.85},
+    {"validation_floor": 0.85, "pooled_floor": 0.90}
+  ],
+  "relaxed_accuracy_grid": [0.80, 0.85, 0.90, 0.95],
+  "filter_change": "Keep the original nonidentity Boolean formula library. Fit the best formula by balanced accuracy using even-indexed complete before/after transition pairs; require balanced accuracy on odd-indexed pairs and pooled pairs to pass fixed thresholds. Minimum 40 states in each half. Ties prefer fewer sources then expression order. Memory update and core code are unchanged.",
+  "primary_success": "Strictly lower readout false-positive rate than the stratified change-tree baseline using the SAME selected new filter at budget 8, and higher direct-effect BA than that baseline at budget 4. Report ties as ties. Also compare both with the original-filter methods on the same fresh records.",
+  "retention_guard": "At budget 4, new-filter components must not reduce physical-effect BA by more than 0.01 versus original-filter components on the same records. Report true-root suppression and noisy readout identification separately.",
+  "selection": "Choose the new filter on development noise10 records only: among settings with <=0.01 low-budget physical-BA loss versus the original filter, maximize low-budget direct BA minus primary-budget readout FPR. Tie break in grid order. If none passes, select the setting with smallest physical-BA loss and explicitly mark failed guard. Select relaxed-threshold baseline by the analogous development objective on its own stratified tree. Both choices are frozen before confirmation.",
+  "methods": ["components original", "stratified tree original", "components validated", "stratified tree validated", "stratified next-state validated", "stratified tree relaxed"],
+  "fairness": "All learners share identical before/after records, observed context, announced rounds, full history, intervention budgets and candidate variable set. Both proposed components and strongest tree receive exactly the same selected validation-based suppression set. The independent relaxed-threshold baseline is tuned on development. No roles, true noise probability or gold mechanism labels enter the filter or learner; simulator truth is used only for evaluation and development selection.",
+  "scope": "Finite observed-context component study. Fresh procedural families, same existing template and supplied diagnostic acquisition schedule. No autonomous change localization, hidden-context identification, MuJoCo or LLM claims. Exact copies remain an identification control.",
+  "statistics": "Average rounds within each family. Paired intervals over 24 independent procedural families, not probes. Low-budget and high-noise scope results are retained; no condition selection after confirmation.",
+  "preservation": "Leave original core, observation adapter, tuple-memory modules, prior experiment records, manuscript and response untouched. New filter is an isolated experimental implementation until tested."
+}

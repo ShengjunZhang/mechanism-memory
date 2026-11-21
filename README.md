@@ -1,41 +1,52 @@
-# Supplementary software
+# Mechanism Memory
 
-This archive contains the code and result files accompanying the manuscript
-`Successful agents can fail to retain causal mechanisms`.
+Code and saved results for **Causal Retention in Interactive Agents**.
+The current implementation is in [`software/`](software/), with experiment
+drivers for finite interventions, continuous simulators, TD-MPC2 response
+retention, and Qwen hidden-state probes.
 
-## Contents
+## Current Version
 
-- `causal_sandbox/`: symbolic SCM environments, mechanism-memory agents, baselines, continuous probes, MuJoCo probe utilities and LLM proposal-policy wrappers.
-- `tests/`: unit tests for the core environments and evaluation utilities.
-- `scripts/make_v3_figures.py`: script used to generate the main statistical figures for the Nature Machine Intelligence version.
-- `results/`: JSON outputs used by the figure script and supplementary tables.
-- `docs/`: experimental notes with representative commands.
+Use the assets attached to release **v2026.11.21** on the
+[Releases page](https://github.com/ShengjunZhang/mechanism-memory/releases):
 
-## Basic setup
+- `code.zip`: algorithms, experiment drivers, analysis scripts and tests.
+- `data.zip`: saved results, protocol records, file hashes and reproduction guide.
+- `SHA256SUMS.txt`: checksums for both archives.
 
-```powershell
-python -m pip install -e .
+Extract `code.zip` and `data.zip` into the same empty directory. Run commands
+from that directory using Python 3.12:
+
+```text
 python -m pip install -r requirements.txt
+python reproduce.py verify
+python reproduce.py validate
+python reproduce.py tests
+python reproduce.py figures --output ../reproduced_figures
 ```
 
-The symbolic and metric-cell experiments require only the lightweight Python dependencies listed in `requirements.txt`. MuJoCo and local LLM experiments require optional local installations of MuJoCo/Gymnasium and a local Hugging Face model, respectively.
+The figure output directory must be new and outside the extracted project.
+These commands check and analyze saved results. Fresh experiments are described
+in `README.md` and `REPRODUCTION.txt` inside the extracted archives; TD-MPC2 and
+Qwen runs require the specified model checkpoints.
 
-## Rebuild figures
+## Working From a Clone
 
-From this directory:
+Enter `software/` and extract the release's `data.zip` **inside that directory**.
+Then run the same commands there. The 117 files in `software/` match `code.zip`
+byte for byte. Data and model weights are not committed to this directory.
 
-```powershell
-python scripts/make_v3_figures.py
-```
+The automatically generated GitHub source archives contain the entire
+repository, including legacy files. Use the attached `code.zip` and `data.zip`
+for the reproduction layout described above.
 
-The script reads JSON files from `results/` and writes figures to `figures/`.
+## Earlier Version
 
-## Run tests
+The earlier implementation, result files and scripts remain at the repository
+root for reference. Do not mix them with `software/`. Their original entry
+points are described in [`docs/legacy_README.md`](docs/legacy_README.md).
+The historical snapshot cited in the paper remains commit
+[`c1655d69`](https://github.com/ShengjunZhang/mechanism-memory/tree/c1655d69b5a8316b67d5f09cac0a4df9f97c8fe6).
 
-```powershell
-python -m unittest discover -s tests
-```
-
-## Representative experiment commands
-
-The full manuscript experiments are deterministic over the reported seeds. Representative commands are listed in `docs/experiment_package_v2.md` and `docs/llm_pilot_notes.md`.
+The bundled TD-MPC2 source retains its upstream
+[license](software/external/tdmpc2/LICENSE).

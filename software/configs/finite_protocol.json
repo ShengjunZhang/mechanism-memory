@@ -1,0 +1,23 @@
+{
+  "protocol_id": "finite_revision_20261112_v2_natural_estimand",
+  "family_seeds": [4100, 4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111],
+  "replicate_seeds": [17, 29, 43],
+  "scenarios": ["modal", "late_peak", "noisy_descendant", "weak_early"],
+  "pairs_per_cell": 4096,
+  "sample_budgets": [64, 256, 1024, 4096],
+  "onset_and_value_law": "natural paired law, after blocked directness certification",
+  "directness_rule": "complete blocking support; at least one blocked TV lower bound exceeds the fixed threshold",
+  "budget_selection": "Budgets fixed for the follow-up before inspecting budget-curve outcomes; no gate tuning.",
+  "effect_threshold": 0.2,
+  "familywise_alpha": 0.05,
+  "formula_agreement_threshold": 0.9,
+  "historical_steps": 120,
+  "historical_mechanisms": 4,
+  "historical_visible_variables": 5,
+  "historical_readouts": 6,
+  "historical_observation_noise": 0.05,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 911,
+  "device": "cpu",
+  "selection": "Fixed before outcome inspection; no test-truth threshold tuning."
+}

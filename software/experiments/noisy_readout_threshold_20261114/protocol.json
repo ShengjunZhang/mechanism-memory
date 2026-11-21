@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "parent_protocol": "experiments/noisy_readout_filter_20261114/protocol.json",
+  "parent_selection": "experiments/noisy_readout_filter_20261114/development_selection.json",
+  "confirmation_families": [10201, 10202, 10203, 10204, 10205, 10206, 10207, 10208, 10209, 10210, 10211, 10212, 10213, 10214, 10215, 10216, 10217, 10218, 10219, 10220, 10221, 10222, 10223, 10224, 10225, 10226, 10227, 10228, 10229, 10230, 10231, 10232, 10233, 10234, 10235, 10236, 10237, 10238, 10239, 10240, 10241, 10242, 10243, 10244, 10245, 10246, 10247, 10248],
+  "min_accuracy": 0.85,
+  "selection": "Use the original adapter threshold already selected for the stratified tree on eight development environments, without further tuning. Apply exactly the same original adapter and suppression set to memory and tree. The preceding validation-based filter failed the physical-retention guard on a separate confirmation cohort; retain that result.",
+  "primary_success": "Strictly lower readout FPR for components calibrated versus stratified tree calibrated at budget 8; higher direct-effect BA at budget 4; physical BA loss at budget 4 no greater than 0.01 versus components original. Report point estimates and paired family bootstrap intervals. A tie is not superiority.",
+  "scope": "Inherit all six conditions, budgets 4 and 8, four rounds, observed contexts and supplied diagnostic schedule. This tests a pre-existing parameter of the original adapter. No core changes and no additional interaction data. Original and calibrated variants share all raw records and budgets.",
+  "methods": ["components original", "components calibrated", "stratified tree original", "stratified tree calibrated", "stratified next-state calibrated"],
+  "statistics": "48 new procedural environments, averaged over rounds within each environment. Pair environment-level outcomes and bootstrap 10000 times. Keep all conditions, seeds, metrics and prior unsuccessful experiments. No stopping or threshold changes based on these outcomes."
+}

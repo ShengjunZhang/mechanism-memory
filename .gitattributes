@@ -1,0 +1,2 @@
+# Preserve the bytes checked by the release manifest, including on Windows.
+software/** -text
