@@ -5,6 +5,10 @@ import runpy
 
 import pytest
 
+pytestmark = pytest.mark.skipif(
+    not Path("experiments/readout_conflict_20261114/results").is_dir(),
+    reason="Saved readout records are stored separately")
+
 
 @pytest.fixture(scope="module")
 def material():

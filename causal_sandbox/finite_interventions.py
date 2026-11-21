@@ -883,7 +883,7 @@ def run(protocol_path: Path, output: Path, historical_cache: Path | None = None)
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--protocol", type=Path, default=ROOT / "data/controlled/experiments/finite_protocol.json")
+    parser.add_argument("--protocol", type=Path, default=ROOT / "configs/finite_protocol.json")
     parser.add_argument("--output", type=Path, default=ROOT / "data/controlled/results")
     parser.add_argument("--reuse-historical", type=Path, help="Reuse a completed finite_results.json; verify historical source/config hashes.")
     args = parser.parse_args()

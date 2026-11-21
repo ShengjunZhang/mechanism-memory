@@ -284,7 +284,7 @@ def test_collection_is_seed_reproducible():
 
 
 def test_historical_matched_replay_has_honest_schema_gap_and_redacted_labels():
-    protocol = json.loads((Path(__file__).resolve().parents[1] / "data/controlled/experiments/finite_protocol.json").read_text())
+    protocol = json.loads((Path(__file__).resolve().parents[1] / "configs/finite_protocol.json").read_text())
     protocol["historical_steps"] = 9
     result = run_historical(4100, 17, protocol)
     assert len(result["trajectory"]) == result["ledger"]["total_step_intervention_calls"] == 9
@@ -356,7 +356,7 @@ def test_clean_public_cli_reproduces_without_review_folder(public_sources):
     root = Path(__file__).resolve().parents[1]
     for source in (root / "causal_sandbox").glob("*.py"):
         shutil.copy2(source, public_sources / "causal_sandbox" / source.name)
-    protocol = json.loads((root / "data/controlled/experiments/finite_protocol.json").read_text())
+    protocol = json.loads((root / "configs/finite_protocol.json").read_text())
     protocol.update(family_seeds=[4100], replicate_seeds=[17], historical_steps=1,
                     pairs_per_cell=64, sample_budgets=[64], bootstrap_replicates=20)
     protocol_path = public_sources / "finite_protocol.json"

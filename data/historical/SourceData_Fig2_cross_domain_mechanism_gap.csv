@@ -1,6 +1,0 @@
-setting,baseline,baseline_probe_score,mechanism_memory,memory_probe_score,task_signal_name,task_signal_value
-Symbolic SCM world model,latent-world-model,0.23892944970156868,causal-core-context-search,0.7931627624811641,next-bit accuracy,0.9046875
-Hidden-context ranking,ranking-loss predictor,0.0,causal-core,0.7641356918196198,rank top-1,0.5208333333333334
-Continuous metric cells,global-linear-regression,0.6666666666666666,metric-causal-core,1.0,baseline readout false positives,4
-HalfCheetah polarity shift,source-linear dynamics,0.005,few-shot metric core,0.9591666666666667,source target accuracy,0.9641666666666667
-Qwen proposal language,llm-causal-prompt,0.16306811839359772,llm-control-planner-gated,0.7272441843870415,prompt readout false positives,32.0

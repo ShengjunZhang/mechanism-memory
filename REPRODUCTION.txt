@@ -1,6 +1,14 @@
 Mechanism Memory: reproduction instructions (updated 21 November 2026)
 =================================================================
 
+Repository contents: code, protocols and parameter locks only. The data paths
+below describe separately stored experiment records; those records are not
+included in the current Git tree. Code checks and generated-input tests run
+without them. Saved-result validation, plotting and saved-record regression
+tests require the corresponding records to be restored at the listed paths.
+Use `git clone --depth 1` or GitHub's Download ZIP for a code-only download;
+earlier Git commits still contain the previously uploaded data.
+
 Run commands from the project root with Python 3.12. H below means
 data/historical/; R means data/controlled/results/.
 P means analysis/historical/; E means data/controlled/experiments/.
@@ -34,7 +42,8 @@ acquires interventions or trains a decoder. Rendering/font/PDF metadata can
 differ from the original PDFs. Validation checks saved hashes and the archived
 verify_reported_results.py assertions, not an independent experimental rerun.
 
-The driver reads H directly from the repository. An optional --source-zip PATH
+With saved records restored locally, the driver reads H from that directory.
+An optional --source-zip PATH
 accepts the original data archive; its required SHA-256 is
 1630d251114f5de421ff60aa5365ff3eecb050d4387d9fac4b6ebf65bf0ea248.
 Both input modes check member hashes. Historical plotting scripts run from

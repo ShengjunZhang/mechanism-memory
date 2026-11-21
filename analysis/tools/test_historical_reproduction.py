@@ -15,12 +15,14 @@ SPEC.loader.exec_module(reproduction)
 
 
 class HistoricalReproductionTests(unittest.TestCase):
+    @unittest.skipUnless((reproduction.ROOT / reproduction.HISTORICAL).is_dir(), "Saved data are stored separately")
     def test_saved_data_and_inspected_source_hashes(self):
         data = reproduction.historical_bytes(reproduction.ROOT)
         report = reproduction.validate(reproduction.ROOT, data, "all")
         self.assertEqual(report["historical_members_checked"], 21)
         self.assertIn("match the packaged raw results", report["reported_claim_check"])
 
+    @unittest.skipUnless((reproduction.ROOT / reproduction.HISTORICAL).is_dir(), "Saved data are stored separately")
     def test_archive_only_loading(self):
         data = reproduction.historical_bytes(reproduction.ROOT)
         with tempfile.TemporaryDirectory() as temporary:
@@ -33,6 +35,7 @@ class HistoricalReproductionTests(unittest.TestCase):
             with patch.object(reproduction, "manifest", return_value=record):
                 self.assertEqual(data, reproduction.historical_bytes(Path(temporary), source_zip=archive))
 
+    @unittest.skipUnless((reproduction.ROOT / reproduction.HISTORICAL).is_dir(), "Saved data are stored separately")
     def test_tampered_member_is_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
@@ -58,6 +61,7 @@ class HistoricalReproductionTests(unittest.TestCase):
                 used.update(group.split(","))
         self.assertEqual(used, set(reproduction.RAW))
 
+    @unittest.skipUnless((reproduction.ROOT / reproduction.HISTORICAL).is_dir(), "Saved data are stored separately")
     def test_reject_output_inside_source_tree_or_existing_directory(self):
         data = reproduction.historical_bytes(reproduction.ROOT)
         with self.assertRaises(ValueError):
@@ -66,6 +70,7 @@ class HistoricalReproductionTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 reproduction.replot(reproduction.ROOT, data, Path(temporary), "historical")
 
+    @unittest.skipUnless((reproduction.ROOT / reproduction.HISTORICAL).is_dir(), "Saved data are stored separately")
     def test_all_six_figures_replot_without_training(self):
         try:
             import numpy as np

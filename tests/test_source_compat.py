@@ -81,6 +81,8 @@ def test_lock_comparison_preserves_other_fields(renamed_source):
     assert not compat.records_match(old, new)
 
 
+@pytest.mark.skipif(not (compat.ROOT / "experiments/readout_conflict_20261114/results").is_dir(),
+                    reason="Saved readout records are stored separately")
 def test_recorded_readout_cache_is_accepted_without_acquisition(monkeypatch):
     from causal_sandbox import readout_conflict_followup as driver
     monkeypatch.chdir(compat.ROOT)
@@ -93,6 +95,8 @@ def test_recorded_readout_cache_is_accepted_without_acquisition(monkeypatch):
     assert driver.run_family(seed, "confirmation", settings, lock) == (seed, json.loads(path.read_text())["seconds"])
 
 
+@pytest.mark.skipif(not (compat.ROOT / "experiments/tdmpc2_sequential_20261116/results").is_dir(),
+                    reason="Saved sequential records are stored separately")
 def test_recorded_sequential_cache_is_accepted_without_training(monkeypatch):
     from causal_sandbox import tdmpc2_sequential as driver
     monkeypatch.chdir(compat.ROOT)

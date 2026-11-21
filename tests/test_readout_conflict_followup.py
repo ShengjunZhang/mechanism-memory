@@ -50,6 +50,8 @@ def test_copy_protection_is_not_vacuous(inverse):
     assert not ({"x", "q"} & conflict_mask(candidates, .05)[0])
 
 
+@pytest.mark.skipif(not Path("experiments/noisy_readout_threshold_20261114/results").is_dir(),
+                    reason="Saved readout records are stored separately")
 def test_saved_clean_or_reverse_rule_regression():
     path = Path("experiments/noisy_readout_threshold_20261114/results/confirmation/family_10208.json")
     run = json.loads(path.read_text())
@@ -68,6 +70,8 @@ def test_saved_clean_or_reverse_rule_regression():
     assert trial["evaluation_only_truth"]["readout"] in mask
 
 
+@pytest.mark.skipif(not Path("experiments/noisy_readout_threshold_20261114/results").is_dir(),
+                    reason="Saved readout records are stored separately")
 def test_saved_clean_or_renaming_and_column_order():
     path = Path("experiments/noisy_readout_threshold_20261114/results/confirmation/family_10208.json")
     run = json.loads(path.read_text())

@@ -1,4 +1,0 @@
-﻿"task","source_nrmse","frozen_shifted_sign_accuracy","global_shifted_sign_accuracy","selective_shifted_sign_accuracy","localized_runs","total_runs"
-"cheetah-run","0.701133410135905","0.0277777777777778","0.794444444444444","0.975","3","3"
-"walker-walk","0.841365496317546","0.141666666666667","0.786111111111111","0.869444444444444","3","3"
-"reacher-easy","0.343063185612361","0.00277777777777778","0.5","1","3","3"

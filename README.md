@@ -1,9 +1,9 @@
 # Mechanism Memory
 
-Code and data for **Causal Retention in Interactive Agents**.
+Code for **Causal Retention in Interactive Agents**.
 
 This repository contains mechanism-memory agents, matched baselines, experiment
-drivers, saved observations and evaluation results. Experiments cover finite
+drivers, protocols and tests. Experiments cover finite
 interventions, continuous simulators, TD-MPC2 response retention, readout
 filtering, sequential adaptation and Qwen hidden-state probes.
 
@@ -12,14 +12,15 @@ filtering, sequential adaptation and Qwen hidden-state probes.
 Clone the repository and install the dependencies with Python 3.12:
 
 ```text
-git clone https://github.com/ShengjunZhang/mechanism-memory.git
+git clone --depth 1 https://github.com/ShengjunZhang/mechanism-memory.git
 cd mechanism-memory
 python -m pip install -r requirements.txt
 ```
 
-Code and data are included directly in the repository. No separate download is
-required for saved-result analysis. The checked-out data occupy about 1.5 GiB;
-model weights and local Python environments are not included.
+The current tree contains code and configuration only. Raw observations,
+saved experiment results, model weights and local Python environments are not
+included. Use the shallow clone above or GitHub's **Download ZIP** to obtain
+the current code without downloading data retained in earlier Git history.
 
 ## Check and Reproduce Results
 
@@ -27,25 +28,27 @@ Run these commands from the repository root:
 
 ```text
 python reproduce.py verify
-python reproduce.py validate
 python reproduce.py tests
-python reproduce.py figures --output ../reproduced_figures
 ```
 
-The figure output directory must be new and outside the checkout. Verification
-checks file hashes and recorded source identities. Validation checks saved
-numerical results; figure generation reads those results without fitting models.
+Verification checks code/configuration hashes and recorded source identities.
+Tests that require saved experiment records are explicitly skipped when those
+records are absent; algorithm tests generate their own inputs.
 
-Additional analyses:
+With the corresponding saved records restored at the paths in
+[REPRODUCTION.txt](REPRODUCTION.txt), the following analyses are available:
 
 ```text
 python reproduce.py map
+python reproduce.py validate
+python reproduce.py figures --output ../reproduced_figures
 python reproduce.py answer-risk
 python reproduce.py readout-analysis
 python reproduce.py sequential-analysis
 python reproduce.py sequential-figure
 ```
 
+The figure output directory must be new and outside the checkout.
 Analysis commands can rewrite derived summaries. Run `verify` before analysis.
 The full protocols, model versions, parameters and result-to-source mapping are
 in [REPRODUCTION.txt](REPRODUCTION.txt).
@@ -73,14 +76,14 @@ protocols in `REPRODUCTION.txt`. TD-MPC2 and Qwen require the specified checkpoi
 | `causal_sandbox/` | Environments, agents, baselines and experiment drivers |
 | `analysis/` | Saved-result checks, analyses and plotting |
 | `configs/` | Finite-intervention configuration |
-| `data/historical/` | Original finite, continuous, TD-MPC2 and Qwen results |
-| `data/controlled/` | Controlled experiments and independent-checkpoint results |
-| `experiments/` | Readout and sequential protocols, records and analyses |
+| `experiments/` | Readout and sequential protocols, parameter locks and analysis scripts |
 | `tests/` | Automated tests |
 | `external/tdmpc2/` | Upstream TD-MPC2 source and license |
 
-Raw numerical records are unchanged. `manifest.json` records their hashes and
-the path changes needed to check older experiment records. Historical names
-inside those records remain as provenance; executable paths use the layout above.
+`manifest.json` records code/configuration hashes and source-path mappings.
+Saved-result checks additionally require `data/historical/`, `data/controlled/`
+and the relevant `experiments/*/results/` records, stored separately from the
+current repository tree. The data-dependent commands do not substitute synthetic
+results when those records are absent.
 
 The bundled TD-MPC2 source retains its upstream [license](external/tdmpc2/LICENSE).
