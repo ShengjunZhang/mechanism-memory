@@ -28,9 +28,11 @@ def test_data_files_fit_regular_git_objects():
         assert (ROOT / name).stat().st_size < 100 * 2**20, name
 
 
-def test_current_manifest_excludes_experiment_data():
+def test_manifest_covers_experiment_records():
     manifest = json.loads((ROOT / "manifest.json").read_text())
-    for name in manifest["files"]:
-        assert not name.startswith("data/")
-        assert "/results/" not in name
-        assert Path(name).suffix not in {".npz", ".npy", ".csv", ".pt", ".safetensors"}
+    names = manifest["files"]
+    assert "DATA_GUIDE.md" in names
+    assert any(n.startswith("data/historical/raw_json/") for n in names)
+    assert any(n.startswith("data/controlled/results/") for n in names)
+    assert any(n.startswith("experiments/") and n.endswith(".npz") for n in names)
+    assert all(Path(n).suffix not in {".pt", ".safetensors"} for n in names)

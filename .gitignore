@@ -17,12 +17,3 @@ Thumbs.db
 /outputs/
 /tmp/
 /figures/
-/data/
-/experiments/*/results/
-/experiments/*/*.csv
-/experiments/*/*.json
-!/experiments/*/protocol.json
-!/experiments/*/confirmation_lock.json
-!/experiments/*/development_lock.json
-!/experiments/*/development_selection.json
-!/experiments/*/baseline_amendment.json

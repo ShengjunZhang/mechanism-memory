@@ -1,0 +1,398 @@
+[
+  {
+    "method": "context replay + shared filter__setting0",
+    "direct_ba": 0.7247290279442467,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.6668916609706084
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.7868132305447881
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7395658332002741
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.7056453870613162
+      }
+    ]
+  },
+  {
+    "method": "context replay + shared filter__setting1",
+    "direct_ba": 0.9234545254373121,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9835526315789473
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9694609788359788
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7986399450559543
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9421645462783685
+      }
+    ]
+  },
+  {
+    "method": "context replay + shared filter__setting2",
+    "direct_ba": 0.9234545254373121,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9835526315789473
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9694609788359788
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7986399450559543
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9421645462783685
+      }
+    ]
+  },
+  {
+    "method": "context replay + shared filter__setting3",
+    "direct_ba": 0.921421946432452,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9828869511055746
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9559992283950617
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.8046370599508033
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9421645462783685
+      }
+    ]
+  },
+  {
+    "method": "context replay next-state + shared filter__setting0",
+    "direct_ba": 0.5624159804698206,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.5224824882503507
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.6182868610098171
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.5894672138326522
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.5194273587864623
+      }
+    ]
+  },
+  {
+    "method": "context replay next-state + shared filter__setting1",
+    "direct_ba": 0.6427976810803763,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.6484416453027446
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.7016593522838425
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.6137495756197138
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.6073401511152042
+      }
+    ]
+  },
+  {
+    "method": "context replay next-state + shared filter__setting2",
+    "direct_ba": 0.6444741878228609,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.6486635387938688
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.7016593522838425
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.6137495756197138
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.6138242845940186
+      }
+    ]
+  },
+  {
+    "method": "context replay next-state + shared filter__setting3",
+    "direct_ba": 0.5812370892049561,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.5805197648956844
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.6186882465150492
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.5673141490278013
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.5584261963812894
+      }
+    ]
+  },
+  {
+    "method": "context replay tree__setting0",
+    "direct_ba": 0.717056901416113,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.6461823555267896
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.8007947784563128
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7464675123239224
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.6747829593574275
+      }
+    ]
+  },
+  {
+    "method": "context replay tree__setting1",
+    "direct_ba": 0.9304558886859562,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9757572168725899
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9647807044521337
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.8235282580953801
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9577573753237207
+      }
+    ]
+  },
+  {
+    "method": "context replay tree__setting2",
+    "direct_ba": 0.9304558886859562,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9757572168725899
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9647807044521337
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.8235282580953801
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9577573753237207
+      }
+    ]
+  },
+  {
+    "method": "context replay tree__setting3",
+    "direct_ba": 0.9233277183011639,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9706198103497155
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9458255977486536
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.8364998178385105
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.9403656472677763
+      }
+    ]
+  },
+  {
+    "method": "full-history forest + shared filter",
+    "direct_ba": 0.8151227776632999,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.8748386996017152
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.880794062829526
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7364531864680861
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.7684051617538721
+      }
+    ]
+  },
+  {
+    "method": "full-history tree__setting0",
+    "direct_ba": 0.7256856920938721,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.6277022936345531
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9875928448024569
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7114022888488898
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.5760453410895888
+      }
+    ]
+  },
+  {
+    "method": "full-history tree__setting1",
+    "direct_ba": 0.8576741587183105,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.897297374441549
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9089749616246656
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7655545218322104
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.8588697769748175
+      }
+    ]
+  },
+  {
+    "method": "full-history tree__setting2",
+    "direct_ba": 0.856928587388947,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.8935043145095232
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.9089749616246656
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7662915501340972
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.8589435232875018
+      }
+    ]
+  },
+  {
+    "method": "full-history tree__setting3",
+    "direct_ba": 0.8365467447895882,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 0.9083584230382888
+      },
+      {
+        "family": 7102,
+        "direct_ba": 0.8818989032412805
+      },
+      {
+        "family": 7103,
+        "direct_ba": 0.7025919674378446
+      },
+      {
+        "family": 7104,
+        "direct_ba": 0.8533376854409389
+      }
+    ]
+  },
+  {
+    "method": "tuple components",
+    "direct_ba": 1.0,
+    "families": [
+      {
+        "family": 7101,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 7102,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 7103,
+        "direct_ba": 1.0
+      },
+      {
+        "family": 7104,
+        "direct_ba": 1.0
+      }
+    ]
+  }
+]

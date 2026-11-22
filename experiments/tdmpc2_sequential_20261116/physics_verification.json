@@ -1,0 +1,72 @@
+[
+  {
+    "task": "cheetah-run",
+    "seed": 2,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "cheetah-run",
+    "seed": 3,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "walker-walk",
+    "seed": 2,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "walker-walk",
+    "seed": 3,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "reacher-easy",
+    "seed": 2,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "reacher-easy",
+    "seed": 3,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "cartpole-swingup",
+    "seed": 2,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 12,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "cartpole-swingup",
+    "seed": 3,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 12,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "finger-spin",
+    "seed": 2,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  },
+  {
+    "task": "finger-spin",
+    "seed": 3,
+    "physical_state_hashes_reproduced": 1400,
+    "test_pairs_reexecuted": 24,
+    "maximum_absolute_response_difference": 0.0
+  }
+]
